@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+
+    <div class="container-fluid">
+        <div class="register">
+            <h1 align="center">register</h1>
+            <hr>
+        <label for="">FIRST NAME :</label>
+        <input type="text" placeholder="Enter your first name"><br>
+        <label for="">LAST NAME :</label>
+        <input type="text" placeholder="Enter your last name"><br>
+        <label for="">ADDRESS :</label>
+        <input type="text" placeholder="Enter your Address"><br>
+        <label for="">PHONE NUMBER :</label>
+        <input type="text" placeholder="Enter your Phone Number"><br>
+        <label for="">DATE OF BIRTH :</label>
+        <input type="date" placeholder="Enter your Birth Date" ><br>
+        <label for="">USERNAME :</label>
+        <input type="text" placeholder="Enter your Username"><br>
+        <label for="">SET PASSWORD</label>
+        <input type="password" placeholder="Enter Password"><br>
+        <label for="">CONFIRM PASSWORD</label>
+        <input type="password" placeholder="Confirm your Password"><br>
+
+        
+        <div class="submit">
+            <a href="/home/login/"> 
+               <button>register</button><br>
+            </a>
+           
+            <a href="/home/login/"><span style="color: white;">Sign-In</span></a>
+        </div>
+
+        </div>
+        
+    </div>
+{% endblock %}

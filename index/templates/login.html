@@ -1,0 +1,23 @@
+
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <div class="container-fluid">
+		<div class="login">
+			<h1 style="font-weight: bold;">Login</h1>
+			<hr>
+			<input type="text" placeholder="Username/Email/Phone Number" name="uname"><br><br><br>
+			<input type="password" placeholder="Enter your Password" name="pass">
+
+		</div>
+		<div class="submit"><a href="/home/index/">
+			<input type="submit" value="Login" ><br>
+		</a>
+			<br>
+			<a href="/home/register/"><span>Sign-Up</span></a>
+<br>
+		</div>
+	</div>
+	<br>
+{% endblock %}

@@ -1,0 +1,32 @@
+.container-fluid{
+    margin: auto;
+    width: 40%;
+    /* background-color: aqua; */
+    text-align: right;
+    
+    
+
+    
+}
+.register {
+    /* display: block; */
+    align-items: right;
+    
+}
+
+.register  label{
+    padding-bottom: 20px;
+}
+
+.register input{
+
+    width: 300px;
+    height: 30px;
+    
+}
+
+.submit{
+
+    padding: 30px;
+    text-align: center;
+}

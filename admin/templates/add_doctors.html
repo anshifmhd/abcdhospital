@@ -1,0 +1,51 @@
+{% extends 'index_admin.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    
+    .container .form {
+        width: 50%;
+        margin: auto;
+        /* padding-top: 50px; */
+        
+    }
+    input{
+        width: 300px;
+        height: 50px;
+        /* align: center;/ */
+    }
+</style>
+
+
+<form action="" method="POST">
+    {% csrf_token %}
+    
+<div class="container" align="center">
+    
+    <div class="form">
+        <label for="">Username :</label>
+    <input type="text" placeholder="enter username/Email" name="uname">
+    <br><br>
+    <label for="">Password :</label>
+    <input type="password" placeholder="enter password" name="pass">
+    <br><br><br>
+    <label for="">Full Name:</label>
+    <input type="text" placeholder="enter password" Name="n">
+    <br><br><br>
+    <label for="">department:</label>
+    <input type="text" placeholder="enter password" name="dep">
+    <br><br><br>
+    <label for="">Description :</label>
+    <input type="text" placeholder="enter password" name="des">
+    <br><br><br>
+    <label for="">Qualification:</label>
+    <input type="text" placeholder="enter password" name="qual">
+    <br><br><br>
+    <input type="submit" value="ADD" class="form-control " style="width: 100px; margin: auto;" >
+    </div>
+</div>
+</form>
+
+
+{% endblock %}

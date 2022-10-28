@@ -1,0 +1,556 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Hello, world!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="{% static 'css/login.css' %}"> -->
+
+    
+    
+  </head>
+  <body style="background-color: rgb(89, 143, 157);" >
+    <header>
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand font-weight-bold " href="#">ABCD <br> HOSPITAL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto ">
+            <li class="nav-item active font-weight-bold">
+              <a class="btn text-white font-weight-bold  mt-3" href="/home/index/">Home </a>
+            </li>
+            <li>
+            <div class="dropdown">
+              <p class="btn text-white font-weight-bold dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                Center of Excellence
+              </p>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item " href="/home/heartcentre/">Heart Centre</a>
+                <a class="dropdown-item " href="#">Institute of Neuro Science</a>
+                <a class="dropdown-item " href="#">Institute of Liver and Gastro Sciences</a>
+                <a class="dropdown-item " href="#">Women Care</a>
+                <a class="dropdown-item " href="#">Child Care</a>
+                <a class="dropdown-item " href="#">Orthopaedics, Spine & Sport Injuries</a>
+                <a class="dropdown-item " href="#">Endocrine Sciences</a>
+              </div>
+            </div>
+            </li>
+            <li>
+              <div class="dropdown">
+                <p class="btn text-white font-weight-bold dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                  Our Specialities
+                </p>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item " href="#">Emergency Medicine</a>
+                  <a class="dropdown-item " href="#">Critical Care</a>
+                  <a class="dropdown-item " href="#">General Medicine</a>
+                  <a class="dropdown-item " href="#">Pulmonology</a>
+                  <a class="dropdown-item " href="#">Dermatology</a>
+                  <a class="dropdown-item " href="#">General Surgery</a>
+                  <a class="dropdown-item " href="#">Dental & Maxillo-facial Surgery</a>
+                  <a class="dropdown-item " href="#">Physical Medicine & Rehabilitation</a>
+                  <a class="dropdown-item " href="#">ENT & Audiology</a>
+                  <a class="dropdown-item " href="#">Radio Diagnosis and Imaging</a>
+                  <a class="dropdown-item " href="#">Anaesthesiology</a>
+                  <a class="dropdown-item " href="#">Psychiatry</a>
+                  <a class="dropdown-item " href="#">Transfusion Medicine</a>
+                  <a class="dropdown-item " href="#">Diagnostics and Blood Bank</a>
+
+
+
+                </div>
+              </div>
+              </li>
+            
+      
+          
+          <div class="dropdown">
+            <p class="btn text-white font-weight-bold dropdown-toggle mt-3" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+              Contact Us
+            </p>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" sty>
+              <a style="background-color: aquamarine;" class="dropdown-item" href="/home/enquiry/">Make An Enquiry <br> </a>
+
+               <a class="dropdown-item" href="#">Emergency Number: <br> 9980106040</a>
+              
+              <a class="dropdown-item" href="#">Helpline Number: <br> 7711001100</a>
+
+            </div>
+          </div>
+          
+          <li id="login" class="nav-item  font-weight-bold ml-auto">
+            <a  class="btn text-white font-weight-bold  mt-3" href="/home/login/">Login</a>
+            
+          </li>
+          
+            
+          </ul>
+          
+          
+        </div>
+      </div>
+    </nav>
+    </header>
+
+    {% block content %}
+
+    
+
+
+<!-- 
+    <section class="home">
+      <div class="container text-white pb-5">
+        <div class="row">
+            <div class="form col-lg-4 col-md-8 col-sm-12 col-12">
+              <img class="homeimg"src="{% static 'images/scenery.jpg' %}" >
+                <h1 style="color: black;">YOUR SMILE <br> 
+                OUR <span style="color: rgb(153, 37, 37);">PASSION</span><br>
+                YOUR LIFE</h1>
+                <button class="btn text-white mt-3 px-5" style="background-color: rgb(38, 71, 70);">Read More</button>
+            </div>
+          </div>
+            
+        </div>
+    </div>
+    </section> -->
+
+    <section class="home1">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="{% static 'images/slide1.jpg'%}" alt="First slide">
+            <div class="carousel-caption">
+              <h1 class="display-2 font-weight-bold">ABCD HOSPITAL</h1>
+              <h3>LOGIN TO KNOW YOUR DETAILS</h3>
+              <a href="/home/login/"><button type="button" class="btn btn-primary btn-lg">LOGIN</button></a>
+
+              <a href="/home/register/"><button type="button" class="btn btn-outline-light btn-lg">SIGN UP </button></a>
+
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 " src="{% static 'images/slide2.jpg'%}" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'images/slide4.jpg'%}" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{% static 'images/slide3.jpg'%}" alt="Third slide">
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+
+    <section class="jumbotron1">
+      <div class="container-fluid">
+        <div class="row jumbotron">
+          <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            
+            <h3 style="font-family:sans-serif; font-weight: bold;">You see Doctors to have good health, Therefore see Consultants to have good Decisions...</h3>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <a href="/home/book_appoinment/"><button style="background-color: rgb(18, 117, 142); color: white;" type="button" class="btn btn-outline-secondary btn-lg">Book an Appoinment</button></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+      <section class="about">
+        <div class="container py-5">
+          <div class="row">
+            <div class="col-lg-6">
+              <img src="{% static 'images/slide4.jpg' %}" class="img-fluid" style="border-radius: 5%;" alt="">
+            </div>
+            <div class="col-lg-6 text-center">
+              <h1 class="py-4 text-center" style="color: white;">About Us</h1>
+              <p class="text-center ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime animi earum ut autem ipsum? 
+                Hic, accusantium animi. Aliquid deleniti, 
+                perspiciatis magni sunt eveniet adipisci eos odit, ea dolorum </p>
+                <a href="/home/about/"><button class="btn text-white mt-4 px-5" style="background-color: rgb(18, 117, 142);"> Read More</button></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <br><br><br>
+      <section class="doctors">
+        <div class="container py-5 text-center">
+          <h1 class="" style="color: white; border-radius: 10ch; background-color: rgb(23, 78, 92); width: 50%; ">Our Doctors</h1>
+          <!-- <hr > -->
+          <br>
+          <div class="row">
+            <div class="col-lg-3 ">
+              <a href="">
+              <div class="card">
+                <div class="card-head">
+                  <p class="font-weight-bold ">ROSHAN <br><small>place</small></p>
+                  <img src="{% static 'images/blankperson.jpg' %}" class="img-fluid" alt="">
+                  <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus incidunt expedita minima iste, sapiente dolores!</p>
+                  <a href="#"><button style="background-color: rgb(18, 117, 142); color: white;" type="button" class="btn btn-outline-secondary btn-md">Read More</button></a><br><br>
+                  <!-- <span class="btn btn-outline-secondary"><i class="bi bi-facebook"></i></span>
+                  <span class="btn btn-outline-secondary"><i class="bi bi-instagram"></i></span>
+                  <span class="btn btn-outline-secondary"><i class="bi bi-twitter"></i></span> -->
+                
+                </div>
+              </div>
+            </a>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <div class="card-head">
+                  <p class="font-weight-bold ">ROSHAN <br><small>place</small></p>
+                  <img src="{% static 'images/blankperson.jpg' %}" class="img-fluid" alt="">
+                  <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus incidunt expedita minima iste, sapiente dolores!</p>
+                  <a href="#"><button style="background-color: rgb(18, 117, 142); color: white;" type="button" class="btn btn-outline-secondary btn-md">Read More</button></a><br><br>
+                  <!-- <span class="btn btn-outline-secondary"><i class="bi bi-facebook"></i></span>
+                  <span class="btn btn-outline-secondary"><i class="bi bi-instagram"></i></span>
+                  <span class="btn btn-outline-secondary"><i class="bi bi-twitter"></i></span> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <div class="card-head">
+                  <p class="font-weight-bold ">ROSHAN <br><small>place</small></p>
+                  <img src="{% static 'images/blankperson.jpg' %}" class="img-fluid" alt="">
+                  <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus incidunt expedita minima iste, sapiente dolores!</p>
+                  <a href="#"><button style="background-color: rgb(18, 117, 142); color: white;" type="button" class="btn btn-outline-secondary btn-md">Read More</button><br></a><br>
+                  <!-- <span class="btn btn-outline-secondary"><i class="bi bi-facebook"></i></span>
+                  <span class="btn btn-outline-secondary"><i class="bi bi-instagram"></i></span>
+                  <span class="btn btn-outline-secondary"><i class="bi bi-twitter"></i></span> -->
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <div class="card-head">
+                  <p class="font-weight-bold ">ROSHAN <br><small>place</small></p>
+                  <img src="{% static 'images/blankperson.jpg' %}" class="img-fluid" alt="">
+                  <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus incidunt expedita minima iste, sapiente dolores!</p>
+                  <a href="#" ><button style="background-color: rgb(18, 117, 142); color: white;" type="button" class="btn btn-outline-secondary btn-md">Read More</button></a><br><br>
+                  <!-- <span class="btn btn-outline-secondary"><i class="bi bi-facebook"></i></span>
+                  <span class="btn btn-outline-secondary"><i class="bi bi-instagram"></i></span>
+                  <span class="btn btn-outline-secondary"><i class="bi bi-twitter"></i></span> -->
+                </div>
+              </div>
+            </div>
+            <br><br><br><br>
+            <div class="next"><a href="/home/doctors/">
+              <button style="margin-right: 100px;">read more</button></a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <br><br>
+      <section class="service">
+        <div class="container text-center py-5">
+          <h1 style="color: rgb(23, 78, 92); border-radius: 10ch; background-color: white; width: 50%; ">Our Services</h1><br>
+          <!-- <hr> -->
+          <div class="row">
+            <div class="col-lg-4 mb-5">
+              <a href=""><div class="card bg-dark text-white">
+                <img class="card-img img-fluid" src="{% static 'images/scenery1.jpg' %}"  alt="Card image">
+                <div class="card-img-overlay">
+                  <span><i class="bi bi-heart-pulse"></i></span>
+                  <h5 class="card-title">Team Of Nurses</h5>
+                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                     Minima quaerat laudantium temporibus aut molestias, tempore eaque, odio nobis inventore 
+                     delectus laborum. Quasi necessitatibus expedita, tempora debitis nostrum quis reprehenderit vero! </p>
+                </div>
+              </div></a>
+            </div>
+
+            <div class="col-lg-4 mb-5">
+              <a href=""><div class="card bg-dark text-white">
+                <img class="card-img img-fluid" src="{% static 'images/scenery1.jpg' %}"  alt="Card image">
+                <div class="card-img-overlay">
+                  <span><i class="bi bi-heart-pulse"></i></span>
+                  <h5 class="card-title">Team Of Nurses</h5>
+                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                     Minima quaerat laudantium temporibus aut molestias, tempore eaque, odio nobis inventore 
+                     delectus laborum. Quasi necessitatibus expedita, tempora debitis nostrum quis reprehenderit vero! </p>
+                </div>
+              </div></a>
+            </div>
+
+            <div class="col-lg-4 mb-5">
+              <a href=""><div class="card bg-dark text-white">
+                <img class="card-img img-fluid" src="{% static 'images/scenery1.jpg' %}"  alt="Card image">
+                <div class="card-img-overlay">
+                  <span><i class="bi bi-heart-pulse"></i></span>
+                  <h5 class="card-title">Team Of Nurses</h5>
+                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                     Minima quaerat laudantium temporibus aut molestias, tempore eaque, odio nobis inventore 
+                     delectus laborum. Quasi necessitatibus expedita, tempora debitis nostrum quis reprehenderit vero! </p>
+                </div>
+              </div></a>
+            </div>
+
+            <div class="col-lg-4 mb-5">
+              <a href=""><div class="card bg-dark text-white">
+                <img class="card-img img-fluid" src="{% static 'images/scenery1.jpg' %}"  alt="Card image">
+                <div class="card-img-overlay">
+                  <span><i class="bi bi-heart-pulse"></i></span>
+                  <h5 class="card-title">Team Of Nurses</h5>
+                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                     Minima quaerat laudantium temporibus aut molestias, tempore eaque, odio nobis inventore 
+                     delectus laborum. Quasi necessitatibus expedita, tempora debitis nostrum quis reprehenderit vero! </p>
+                </div>
+              </div></a>
+            </div>
+
+            <div class="col-lg-4 mb-5">
+              <a href=""><div class="card bg-dark text-white">
+                <img class="card-img img-fluid" src="{% static 'images/scenery1.jpg' %}"  alt="Card image">
+                <div class="card-img-overlay">
+                  <span><i class="bi bi-heart-pulse"></i></span>
+                  <h5 class="card-title">Team Of Nurses</h5>
+                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                     Minima quaerat laudantium temporibus aut molestias, tempore eaque, odio nobis inventore 
+                     delectus laborum. Quasi necessitatibus expedita, tempora debitis nostrum quis reprehenderit vero! </p>
+                </div>
+              </div></a>
+            </div>
+
+            <div class="col-lg-4 mb-5">
+              <a href=""><div class="card bg-dark text-white">
+                <img class="card-img img-fluid" src="{% static 'images/scenery1.jpg' %}"  alt="Card image">
+                <div class="card-img-overlay">
+                  <span><i class="bi bi-heart-pulse"></i></span>
+                  <h5 class="card-title">Team Of Nurses</h5>
+                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                     Minima quaerat laudantium temporibus aut molestias, tempore eaque, odio nobis inventore 
+                     delectus laborum. Quasi necessitatibus expedita, tempora debitis nostrum quis reprehenderit vero! </p>
+                </div>
+              </div></a>
+            </div>
+
+            
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="blog">
+        <div class="container text-center py-5 ">
+          <h1 style="color:rgb(38, 71, 70);">Latest From Blog</h1>
+          <hr>
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="card">
+                <div class="card-head">
+                  <img src="{% static 'images/scenery.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="card-body">
+                  <p class="font-weight-bold"><u><a href="#">Attitude Of Out Doctors</a></u></p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Perferendis nulla cum quas non debitis itaque?</p>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <div class="card-head">
+                  <img src="{% static 'images/scenery.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="card-body">
+                  <p class="font-weight-bold"><u><a href="#">Attitude Of Out Doctors</a></u></p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Perferendis nulla cum quas non debitis itaque?</p>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card">
+                <div class="card-head">
+                  <img src="{% static 'images/scenery.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="card-body">
+                  <p class="font-weight-bold"><u><a href="#">Attitude Of Out Doctors</a></u></p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Perferendis nulla cum quas non debitis itaque?</p>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="card ">
+                <div class="card-head">
+                  <img src="{% static 'images/scenery.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="card-body">
+                  <p class="font-weight-bold"><u><a href="#">Attitude Of Out Doctors</a></u></p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Perferendis nulla cum quas non debitis itaque?</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="call">
+        <div class="container text-center py-5">
+          <div class="row">
+            <div class="col-lg-4">
+              <a href="#">
+              <span><i class="bi bi-telephone-fill"></i></span>
+              <h5>Give Us A Short Call</h5></a>
+            </div>
+            <div class="col-lg-4">
+              <a href="">
+              <span><i class="bi bi-geo-alt-fill"></i></span>
+              <h5>Search Us On Google</h5></a>
+            </div>
+            <div class="col-lg-4">
+              <a href="">
+              <span><i class="bi bi-envelope-fill"></i></span>
+              <h5>abcdhospital@gmail.com</h5></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {% endblock %}
+
+      <footer class="footer" style="font-size: 14px;">
+        <div class="">
+          <div class="container text-center py-5">
+            <div class="row">
+            <div class="col-lg-4 ">
+              <h4 class="font-weight-bold text-left">QUICK LINKS</h4>
+              <ul class="text-left py-3">
+                <li>Find a Doctor </li>
+                <li>Book an Appointment</li>
+                <li>Leave a Feedback</li>
+                <li>departments</li>
+                <li>Wellness</li>
+                <li>Foundation</li>
+                <li>Careers</li>
+                <li>Guidelines for Patient & Attendants</li>
+                <li>Patient Rights and Responsibilities</li>
+                <li>Insurance</li>
+                <li>Hospitals</li>
+              </ul>
+            
+            </div>
+            <div class="col-lg-4 col-md-6">
+             <h3 class="font-weight-bold text-left">Multispeciality</h3>
+             <ul class="text-left py-3">
+              <li>Anaesthesiology</li>
+              <li>Bariatric Metabolic Surgery</li>
+              <li>Dentistry</li>
+              <li>Dermatology</li>
+              <li>ENT And Head & Neck Surgery</li>
+              <li>Emergency Medicine</li>
+              <li>Endocrinology & Diabetology</li>
+              <li>IVF & Fertility</li>
+              <li>Ophthalmology</li>
+              <li>Nephrology</li>
+              <li>Urology</li>
+              <li>Psychiatry & Counselling Services</li>
+             </ul>
+            </div>
+
+            <div class="col-lg-4">
+              <h3 class="font-weight-bold text-left">Centres Of Excellence</h3>
+              <ul class="text-left py-3">
+                <li><a href=""> Cardiac Sciences</a></li>
+                <li>Neuro Sciences</li>
+                <li>Oncology</li>
+                <li>Orthopaedics</li>
+                <li>Paediatrics & Neonatology</li>
+                Aster Centres Of Excellence
+
+    
+
+             
+          
+          
+            </div>
+          </div>
+          <hr>
+            
+            <div class="row mt-0">
+              
+              <div class="col-lg-6 text-left py-5 ">
+                <p><a href="#">abcdhospital@gmail.com</a></p>   |
+                <p><a href="#">about</a></p>
+              </div>
+              <div class="col-lg-6 text-right">
+                <p class="px-4">Follow Us</p><br><br>
+                <h3 >                 
+                <span class="mr-4"><i class="bi bi-instagram"></i></span>
+                <span class="mr-4"><i class="bi bi-facebook"></i></span>
+                <span class="mr-4"><i class="bi bi-twitter"></i></span>
+                <span class="mr-4"><i class="bi bi-linkedin"></i></span>
+                <span class="mr-4"><i class="bi bi-youtube"></i></span>
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </footer>
+
+
+
+
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+  </body>
+</html>

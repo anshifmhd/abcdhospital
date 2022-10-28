@@ -1,0 +1,26 @@
+
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        p{
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        img{
+            width: 30%;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <h1 align="center">CARDIOLOGY</h1>
+        <hr>
+        <img  src="{% static 'images/scenery.jpg' %}" alt="">
+        <p>The abcdhospital Department of Cardiology offers the latest innovations in invasive and noninvasive cardiac care to patients of all ages. The department of Cardiology provides medical management for all kinds of diseases relating to the heart and circulatory system. Medical diagnosis and treatments are offered to health issues like heart failures, congenital heart diseases and various other disorders. Understanding the needs of heart patients, BMH has facilitated services of highly experienced cardiologists and advanced technology. Cutting‐edge facilities and services are provided to ensure quality care to the patients at affordable cost. Two Digital flat panel Cath lab with Gen 3 – Greenfield Technology, IVUS facility makes it easier to have best results making way for better diagnosis and treatment. The radionuclide cardiac imaging technology aims at better imaging with less radiation. The test is done to evaluate various cardiac issues. The electrophysiology lab at BMH cardiology department has facilities for diagnosis as well as treatment for irregular heart beat conditions.</p>
+
+    </div>
+{% endblock %}

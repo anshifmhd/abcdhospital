@@ -1,0 +1,19 @@
+.container .enquiry {
+    /* background-color: red; */
+    padding: 50px;
+}
+
+.enquiry #name, #ph {
+    
+}
+
+.enquiry input {
+    height: 50px;
+    
+}
+
+.enquiry select {
+    height: 50px;
+    width: 170px;
+}
+
