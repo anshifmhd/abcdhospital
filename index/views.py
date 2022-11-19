@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 
 from admin.models import Add_doc
 # from . models import *
+from customers import views
 
 # Create your views here.
 
@@ -27,7 +28,7 @@ def login(request):
         try:
             user = Add_doc.objects.get(username = usern, password = passw)
             request.session['userid'] = user.id
-            return redirect('log')
+            return redirect('index_cust')
         except:
             return render(request,'login.html',{ 'message' : 'invalid username or password' })
     return render(request,'login.html')
@@ -36,6 +37,8 @@ def login(request):
 def logout(request):
     del request.session['userid']
     return redirect('log')
+
+
 
 
 
