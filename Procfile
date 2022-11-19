@@ -1,1 +1,1 @@
-web : gunicorn abcdhospital.wsgi --log-file -
+web: gunicorn abcdhospital.wsgi --log-file -
