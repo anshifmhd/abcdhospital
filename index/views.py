@@ -23,7 +23,7 @@ def register(request):
         
 def login(request):
     if request.method == 'POST':
-        usern = request.POST['uname']
+        usern = request.POST['usernam']
         passw = request.POST['pass']
         try:
             user = Add_doc.objects.get(username = usern, password = passw)

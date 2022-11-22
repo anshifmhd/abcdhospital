@@ -2,10 +2,14 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* color: white; */
+    font-size: small;
+    color: white;
+    font-family: "Audiowide", sans-serif;
 }
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Audiowide", sans-serif;
+    
+    
     /* background-color: red ; */
     /* font-family: "Trirong", serif; */
     /* font-size: 15px; */
@@ -23,32 +27,32 @@ body{
     
 }
 
-.carousel-item img{
-    height: 200px;
-}
+/* .carousel-item img{
+    /* height: 200px; */
+/* } */ */
 
 header{
     background-color: rgb(18, 117, 142);
 }
 
 .jumbotron{
-    background-color: rgb(23, 78, 92);
-    border: white 5px solid;
+    background-color: rgb(12, 62, 75);
+    /* border: white 5px solid; */
     color: white;
-    border-radius: 2ch;
+    /* border-radius: 2ch; */
 }
 
 
 .about{
-    border: white 5px solid;
+    /* border: white 5px solid; */
     border-radius: 45ch;
-    background-color: rgb(23, 78, 92);
+    background-color:  rgb(12, 62, 75);
 }
 
 
 .card{
     /* padding: 1.5em .5em .5em; */
-    border-radius: 3em;
+    /* border-radius: 3em; */
     text-align: center;
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
@@ -57,7 +61,7 @@ header{
 .card-head  {
     background-color: rgb(23, 78, 92);
     /* border: white 5px solid; */
-    border-radius: 5ch;
+    /* border-radius: 5ch; */
     color: white;
     
 }
@@ -96,11 +100,11 @@ header{
 
 }
 hr{
-    width: 10%;
+    width: 40%;
     border-width: 4px;
     background-color: black;
     margin: auto;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
     
 }
 

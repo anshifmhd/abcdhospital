@@ -9,17 +9,21 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <title>Hello, world!</title>
+    <title>abcdhospital</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <link rel="stylesheet" href="{% static 'css/login.css' %}"> -->
-
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <style>
+      body{
+        font-family: "Audiowide", sans-serif;
+      }
+    </style>
     
   </head>
-  <body style="background-color: rgb(89, 143, 157);" >
+  <body  style="background-color: rgb(69, 92, 98);"  >
     <header>
-    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color:  rgb(12, 62, 75);">
     <div class="container">
         <a class="navbar-brand font-weight-bold " href="#">ABCD <br> HOSPITAL</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" >
@@ -91,7 +95,7 @@
           </div>
           
           <li id="login" class="nav-item  font-weight-bold ml-auto">
-            <a  class="btn text-white font-weight-bold  mt-3" href="/home/login/">Login</a>
+            <a  class="btn text-white font-weight-bold  mt-3" href="login">Login</a>
             
           </li>
           
@@ -139,7 +143,7 @@
             <div class="carousel-caption">
               <h1 class="display-2 font-weight-bold">ABCD HOSPITAL</h1>
               <h3>LOGIN TO KNOW YOUR DETAILS</h3>
-              <a href="/home/login/"><button type="button" class="btn btn-primary btn-lg">LOGIN</button></a>
+              <a href="{% url 'log' %}"><button type="button" class="btn btn-primary btn-lg">LOGIN</button></a>
 
               <a href="/home/register/"><button type="button" class="btn btn-outline-light btn-lg">SIGN UP </button></a>
 
@@ -165,7 +169,7 @@
         <div class="row jumbotron">
           <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
             
-            <h3 style="font-family:sans-serif; font-weight: bold;">You see Doctors to have good health, Therefore see Consultants to have good Decisions...</h3>
+            <h6 style="font-weight: bold;">You see Doctors to have good health, Therefore see Consultants to have good Decisions...</h6>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
             <a href="/home/book_appoinment/"><button style="background-color: rgb(18, 117, 142); color: white;" type="button" class="btn btn-outline-secondary btn-lg">Book an Appoinment</button></a>
@@ -179,10 +183,10 @@
         <div class="container py-5">
           <div class="row">
             <div class="col-lg-6">
-              <img src="{% static 'images/slide4.jpg' %}" class="img-fluid" style="border-radius: 5%;" alt="">
+              <img src="{% static 'images/slide4.jpg' %}" class="img-fluid" style="border-radius: 50%;" alt="">
             </div>
-            <div class="col-lg-6 text-center">
-              <h1 class="py-4 text-center" style="color: white;">About Us</h1>
+            <div class="col-lg-6 text-center"><br>
+          <h1 class=" text-center" style="color: rgb(23, 78, 92); border-radius: 5ch; background-color: white; ">About Us</h1><br>
               <p class="text-center ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime animi earum ut autem ipsum? 
                 Hic, accusantium animi. Aliquid deleniti, 
                 perspiciatis magni sunt eveniet adipisci eos odit, ea dolorum </p>
@@ -195,7 +199,7 @@
       <br><br><br>
       <section class="doctors">
         <div class="container py-5 text-center">
-          <h1 class="" style="color: white; border-radius: 10ch; background-color: rgb(23, 78, 92); width: 50%; ">Our Doctors</h1>
+          <h1 style="color: rgb(23, 78, 92); border-radius: 5ch; background-color: white; ">Our Doctors</h1><br>
           <!-- <hr > -->
           <br>
           <div class="row">
@@ -206,6 +210,7 @@
                   <p class="font-weight-bold ">ROSHAN <br><small>place</small></p>
                   <img src="{% static 'images/blankperson.jpg' %}" class="img-fluid" alt="">
                   <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus incidunt expedita minima iste, sapiente dolores!</p>
+                  <br>
                   <a href="#"><button style="background-color: rgb(18, 117, 142); color: white;" type="button" class="btn btn-outline-secondary btn-md">Read More</button></a><br><br>
                   <!-- <span class="btn btn-outline-secondary"><i class="bi bi-facebook"></i></span>
                   <span class="btn btn-outline-secondary"><i class="bi bi-instagram"></i></span>
@@ -266,7 +271,7 @@
       <br><br>
       <section class="service">
         <div class="container text-center py-5">
-          <h1 style="color: rgb(23, 78, 92); border-radius: 10ch; background-color: white; width: 50%; ">Our Services</h1><br>
+          <h1 style="color: rgb(23, 78, 92); border-radius: 10ch; background-color: white; ">Our Services</h1><br>
           <!-- <hr> -->
           <div class="row">
             <div class="col-lg-4 mb-5">
@@ -424,11 +429,13 @@
               <a href="#">
               <span><i class="bi bi-telephone-fill"></i></span>
               <h5>Give Us A Short Call</h5></a>
+              <br><br><br>
             </div>
             <div class="col-lg-4">
               <a href="">
               <span><i class="bi bi-geo-alt-fill"></i></span>
               <h5>Search Us On Google</h5></a>
+              <br><br><br>
             </div>
             <div class="col-lg-4">
               <a href="">
