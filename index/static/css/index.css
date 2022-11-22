@@ -130,12 +130,17 @@ hr{
     color: rgb(38, 71, 70);
     font-size: 40px;
     padding-bottom: 20px;
+    
+}
+.service .container .card-title, .card-text{
+    color:rgb(38, 71, 70);
 }
 
 
 .blog .container  .card{
     margin-bottom: 30px;
     padding: 5px
+    
 
 }
 
