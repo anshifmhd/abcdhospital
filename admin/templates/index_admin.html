@@ -17,8 +17,8 @@
     
     
   </head>
-  <body style="background-color: rgb(89, 143, 157);" >
-    <header>
+  <body style="background-color: rgb(69, 121, 134);" >
+    <header style = "background-color: rgb(45, 82, 91);">
     <nav class="navbar navbar-expand-md navbar-dark sticky-top">
     <div class="container">
         <a class="navbar-brand font-weight-bold " href="#">ABCD <br> HOSPITAL</a>
@@ -29,12 +29,14 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto ">
             <li class="nav-item active font-weight-bold">
-              <a class="btn text-white font-weight-bold  mt-3" href="/home/index/">Home </a>
+              <a class="btn text-white font-weight-bold  mt-3" href="{% url 'index' %}">Website </a>
             </li>
-            <li>
-                <li class="nav-item active font-weight-bold">
-                    <a class="btn text-white font-weight-bold  mt-3" href="/admin/add_doctors/">Add Doctors</a>
-                  </li>
+            <li class="nav-item active font-weight-bold">
+              <a class="btn text-white font-weight-bold  mt-3" href="/admin/add_doctors/">Add Doctors</a>
+            </li>
+            <li class="nav-item active font-weight-bold">
+              <a class="btn text-white font-weight-bold  mt-3" href="{% url 'viewRegister' %}">View Registers</a>
+            </li>
        
         </div>
       </div>
@@ -44,8 +46,10 @@
    
 
 
-    <div class="container" style="width: 75%;  margin: auto; margin-top: 50px ; margin-bottom: 50px;">
+    <div class="container" style="width: 75%;  margin: auto; margin-top: 50px ; margin-bottom: 50px; ">
         {% block content %}
+
+        <h1>admin page</h1>
        
       {% endblock %}
     </div>

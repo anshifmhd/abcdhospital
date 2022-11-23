@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns=[
     # path('/',views.),
-    path('v_doctors/',views.view_doc),
+    path('viewDoctor/',views.view_doc, name = "viewDoctor"),
 
 
 

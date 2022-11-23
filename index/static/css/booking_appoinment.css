@@ -1,0 +1,15 @@
+input, select{
+    width: 200px; 
+    height: 40px;
+    color: rgb(23, 78, 92);
+    margin-bottom: 10px;
+    text-align-last : center;
+    border-radius: 20px;
+
+    
+}
+.booking{
+    text-align: right;
+    margin-right: 40%;
+
+}

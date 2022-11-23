@@ -1,21 +1,23 @@
 {% extends 'index.html' %}
 {% load static %}
 {% block content %}
-    <div class="container " style="text-align: center; ">
-        <div class="head">
-            <h1>Book Your Appoinment</h1>
-            <hr width="50%">
-            <br><br><br>
-        </div>
-        <div class="booking" align="center">
-            <label for="">Full Name</label>
-            <input type="text"><br>
-            <label for="">Age</label>
-            <input type="text"><br>
-            <label for="">Phone Number</label>
-            <input type="text"><br>
-            <label for="">Choose a Department</label>
-            <select name="departments" id="">
+<style>
+    
+</style>
+
+<div class="container" align = "center">
+    <h2 >Book Your Appoinment</h2>
+    <form action="">
+        <div class="booking" >
+            <label for="">Full Name :</label>
+            <input type="text" placeholder="Enter your name" ><br>
+            <label for="">Age :</label>
+            <input type="text" placeholder="Enter your age"><br>
+            <label for="">Phone Number :</label>
+            <input type="text" placeholder="Enter phone number"><br>
+            <label for="">Choose a Department :</label>
+            <select name="departments" id="" >
+                <option value="">Choose Department</option>
                 <option value="">surgery</option>
                 <option value="">gynaecology</option>
                 <option value="">obstetrics</option>
@@ -33,20 +35,26 @@
                 <option value=""> infectious disease</option>
             </select>
             <br>
-            <label for="">Select Doctor</label>
+            <label for="">Select Doctor :</label>
             <select name="" id="">
+                <option value="">Select Doctor</option>
                 <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+
             </select>
 
 
             <div style="margin-top: 45px;">
                 <a href="/home/booking_date/"><input type="submit" value="NEXT"></a>
             </div>
+    </form>
 
 
 
 
-          
-        </div>
-    </div>
+</div>
+</div>
 {% endblock %}

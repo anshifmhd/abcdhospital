@@ -14,6 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <link rel="stylesheet" href="{% static 'css/login.css' %}"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="{% static 'css/booking_appoinment.css' %}">
     <style>
       body{
         font-family: "Audiowide", sans-serif;
@@ -33,7 +34,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto ">
             <li class="nav-item active font-weight-bold">
-              <a class="btn text-white font-weight-bold  mt-3" href="">Home </a>
+              <a class="btn text-white font-weight-bold  mt-3" href="{% url 'index' %}">Home </a>
             </li>
             <li>
             <div class="dropdown">
@@ -41,13 +42,13 @@
                 Center of Excellence
               </p>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item " href="/heartcentre/">Heart Centre</a>
-                <a class="dropdown-item " href="#">Institute of Neuro Science</a>
-                <a class="dropdown-item " href="#">Institute of Liver and Gastro Sciences</a>
-                <a class="dropdown-item " href="#">Women Care</a>
-                <a class="dropdown-item " href="#">Child Care</a>
-                <a class="dropdown-item " href="#">Orthopaedics, Spine & Sport Injuries</a>
-                <a class="dropdown-item " href="#">Endocrine Sciences</a>
+                <a class="dropdown-item " href="{% url 'heartcentre' %}">Heart Centre</a>
+                <a class="dropdown-item " href="{% url 'neuro_science' %}">Institute of Neuro Science</a>
+                <a class="dropdown-item " href="{% url 'liver_gastro' %}">Institute of Liver and Gastro Sciences</a>
+                <a class="dropdown-item " href="{% url 'womenCare' %}">Women Care</a>
+                <a class="dropdown-item " href="{% url 'childCare' %}">Child Care</a>
+                <a class="dropdown-item " href="{% url 'orthopaedic' %}">Orthopaedics, Spine & Sport Injuries</a>
+                <a class="dropdown-item " href="{% url 'endocrine' %}">Endocrine Sciences</a>
               </div>
             </div>
             </li>
@@ -57,20 +58,20 @@
                   Our Specialities
                 </p>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item " href="#">Emergency Medicine</a>
-                  <a class="dropdown-item " href="#">Critical Care</a>
-                  <a class="dropdown-item " href="#">General Medicine</a>
-                  <a class="dropdown-item " href="#">Pulmonology</a>
-                  <a class="dropdown-item " href="#">Dermatology</a>
-                  <a class="dropdown-item " href="#">General Surgery</a>
-                  <a class="dropdown-item " href="#">Dental & Maxillo-facial Surgery</a>
-                  <a class="dropdown-item " href="#">Physical Medicine & Rehabilitation</a>
-                  <a class="dropdown-item " href="#">ENT & Audiology</a>
-                  <a class="dropdown-item " href="#">Radio Diagnosis and Imaging</a>
-                  <a class="dropdown-item " href="#">Anaesthesiology</a>
-                  <a class="dropdown-item " href="#">Psychiatry</a>
-                  <a class="dropdown-item " href="#">Transfusion Medicine</a>
-                  <a class="dropdown-item " href="#">Diagnostics and Blood Bank</a>
+                  <a class="dropdown-item " href="{% url 'emergency_medicine' %}">Emergency Medicine</a>
+                  <a class="dropdown-item " href="{% url 'critical_Care' %}">Critical Care</a>
+                  <a class="dropdown-item " href="{% url 'generalMedicine' %}">General Medicine</a>
+                  <a class="dropdown-item " href="{% url 'pulumology' %}">Pulmonology</a>
+                  <a class="dropdown-item " href="{% url 'dermatology' %}">Dermatology</a>
+                  <a class="dropdown-item " href="{% url 'generalSurgery' %}">General Surgery</a>
+                  <a class="dropdown-item " href="{% url 'DentalAndMaxillo' %}">Dental & Maxillo-facial Surgery</a>
+                  <a class="dropdown-item " href="{% url 'physicalMedicine_rehabilitation' %}">Physical Medicine & Rehabilitation</a>
+                  <a class="dropdown-item " href="{% url 'Ent_audiology' %}">ENT & Audiology</a>
+                  <a class="dropdown-item " href="{% url 'radioDiagnosis' %}">Radio Diagnosis and Imaging</a>
+                  <a class="dropdown-item " href="{% url 'anaesthesiology' %}">Anaesthesiology</a>
+                  <a class="dropdown-item " href="{% url 'psychiatry' %}">Psychiatry</a>
+                  <a class="dropdown-item " href="{% url 'transfusion_medicine' %}">Transfusion Medicine</a>
+                  <a class="dropdown-item " href="{% url 'BloodBank' %}">Diagnostics and Blood Bank</a>
 
 
 
@@ -175,7 +176,7 @@
             <h6 style="font-weight: bold;">You see Doctors to have good health, Therefore see Consultants to have good Decisions...</h6>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <a href="/home/book_appoinment/"><button style="background-color: rgb(18, 117, 142); color: white;" type="button" class="btn btn-outline-secondary btn-lg">Book an Appoinment</button></a>
+            <a href="{% url 'book_appoinment' %}"><button style="background-color: rgb(18, 117, 142); color: white;" type="button" class="btn btn-outline-secondary btn-lg">Book an Appoinment</button></a>
           </div>
         </div>
       </div>
@@ -204,7 +205,7 @@
               <p class="text-center ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime animi earum ut autem ipsum? 
                 Hic, accusantium animi. Aliquid deleniti, 
                 perspiciatis magni sunt eveniet adipisci eos odit, ea dolorum </p>
-                <a href="/home/about/"><button class="btn text-white mt-4 px-5" style="background-color: rgb(18, 117, 142);"> Read More</button></a>
+                <a href="/about/"><button class="btn text-white mt-4 px-5" style="background-color: rgb(18, 117, 142);"> Read More</button></a>
             </div>
           </div>
         </div>
@@ -240,9 +241,9 @@
                   <img src="{% static 'images/blankperson.jpg' %}" class="img-fluid" alt="">
                   <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus incidunt expedita minima iste, sapiente dolores!</p>
                   <a href="#"><button style="background-color: rgb(18, 117, 142); color: white;" type="button" class="btn btn-outline-secondary btn-md">Read More</button></a><br><br>
-                  <span class="btn btn-outline-secondary"><i class="bi bi-facebook"></i></span>
-                  <span class="btn btn-outline-secondary"><i class="bi bi-instagram"></i></span>
-                  <span class="btn btn-outline-secondary"><i class="bi bi-twitter"></i></span>
+                  <a href="#"><span class="btn btn-outline-secondary"><i class="bi bi-facebook"></i></span></a>
+                  <a href="#"><span class="btn btn-outline-secondary"><i class="bi bi-instagram"></i></span></a>
+                  <a href="#"><span class="btn btn-outline-secondary"><i class="bi bi-twitter"></i></span></a>
                   <br><br>
                 
                 </div>
@@ -299,7 +300,7 @@
               </div>
             </div>
             <br><br><br><br>
-            <div class="next" align = "right" style="width: 100%; margin-right: 12px; "><a href="/home/doctors/">
+            <div class="next" align = "right" style="width: 100%; margin-right: 12px; "><a href="{% url 'viewDoctor' %}">
               <button  class="btn  mt-4 px-5" style="background-color: white;">read more</button></a>
             </div>
             
