@@ -2,11 +2,16 @@ from django.shortcuts import render,redirect
 
 from admin.models import Add_doc
 from decorators import login_required
-from index.models import Register
+from index.models import Register,Book_appoinment,Account
+from admin.models import Department, Add_doc
 # from . models import *
 
 
 # Create your views here.
+
+
+
+
 
 
 def ind(request):
@@ -25,12 +30,15 @@ def register(request):
         address = request.POST['address']
         phone = request.POST['Phone']
         dob = request.POST['dob']
-        username = request.POST['username']
+        userName = request.POST['username']
         password = request.POST['password']
+        
 
-        reg = Register(name = name, email = email, address = address, phone = phone, dob = dob,
-        userName = username, password = password)
+        reg = Register(name = name, email = email, address = address, phone = phone, dob = dob)
+        account = Account(userName = userName, password = password, type = "user", user = id)
         reg.save()
+        account.save()
+
 
     return render(request,'register.html')
 
@@ -41,13 +49,21 @@ def login(request):
         usern = request.POST['usernam']
         passw = request.POST['pass']
         try:
-            user = Register.objects.get(userName = usern, password = passw)
+            user = Account.objects.get(userName = usern, password = passw)
             request.session['userid'] = user.id
-            return redirect('index_cust')
+            if (user.type == "doctor"):
+                print('hi')
+                return redirect('index_doctors')
+            elif (user.type == "user"):
+                return redirect ('index_cust')
+            elif (user.type == "admin"):
+                return redirect('index_admin')
+            else :
+                return redirect ('manager')
         except:
             return render(request,'login.html',{ 'message' : 'invalid username or password' })
     return render(request,'login.html')
- 
+
 @login_required
 def logout(request):
     del request.session['userid']
@@ -58,6 +74,18 @@ def logout(request):
 
 
 def book_appoinment(request):
+    
+    if request.method == "POST":
+        gender = request.POST['gender']
+        age = request.POST['gender']
+        department = request.POST['department']
+        selectDoctor = request.POST['selectDoctor']
+
+        obj = Book_appoinment(gender = gender, age = age, department = department, selectDoctor = selectDoctor)
+        obj.save()
+        
+    
+    
     return render(request,'book_appoinment.html')
 
     
