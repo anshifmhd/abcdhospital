@@ -7,11 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method = "POST">
-        {% csrf_token %}
-        <input type="text" placeholder="admin username" name="username">
-        <input type="password" placeholder="admin password" name="password">
-        <input type="submit" value="add">
-    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
+                <form action="" method = "POST">
+                    {% csrf_token %}
+                    <input type="text" placeholder="admin username" name="username">
+                    <input type="password" placeholder="admin password" name="password">
+                    <input type="submit" value="add">
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

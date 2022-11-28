@@ -78,15 +78,18 @@ def book_appoinment(request):
     if request.method == "POST":
         gender = request.POST['gender']
         age = request.POST['gender']
-        department = request.POST['department']
-        selectDoctor = request.POST['selectDoctor']
+        department_id = request.POST['department']
+        department = Department.objects.get( id = department_id)
+        doctorName_id = request.POST['doctorName']
+        doctorName = Add_doc.objects.get( id = doctorName_id)
 
-        obj = Book_appoinment(gender = gender, age = age, department = department, selectDoctor = selectDoctor)
+        obj = Book_appoinment(gender = gender, age = age, department = department, doctorName = doctorName)
         obj.save()
+        return render(request,'book_appoinment.html', {'departments' : Department.objects.all(), 'doctors' :  Add_doc.objects.all() })
+    
+    
+    return render(request,'book_appoinment.html', {'departments' : Department.objects.all(), 'doctors' : Add_doc.objects.all() })
         
-    
-    
-    return render(request,'book_appoinment.html')
 
     
 def booking_date(request):

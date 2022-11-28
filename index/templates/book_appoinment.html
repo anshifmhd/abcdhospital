@@ -2,12 +2,14 @@
 {% load static %}
 {% block content %}
 <style>
-    
+    select option{
+        color: black;
+    }
 </style>
 
 <div class="container" align = "center">
     <h2 >Book Your Appoinment</h2>
-    <form action="">
+    <form action="{% url 'book_appoinment' %}">
         <div class="booking" >
             <label for="">Gender :</label>
             <input type="text" placeholder="Enter Gender" name = "gender"><br>
@@ -17,36 +19,22 @@
             <label for="">Age :</label>
             <input type="text" placeholder="Enter your age" name = "age"><br>
             <label for="">Choose a Department :</label>
-            <select name="departments" id="" >
-                <option value="">Choose Department</option>
-                <option value="">surgery</option>
-                <option value="">gynaecology</option>
-                <option value="">obstetrics</option>
-                <option value="">paediatrics</option>
-                <option value="">eye</option>
-                <option value="">ENT</option>
-                <option value="">dental</option>
-                <option value="">orthopaedics</option>
-                <option value="">neurology</option>
-                <option value="">cardiology</option>
-                <option value="">psychiatry</option>
-                <option value="">skin</option>
-                <option value="">plastic surgery</option>
-                <option value=""> nuclear medicine</option>
-                <option value=""> infectious disease</option>
+            <select name="departments" id="">
+                {% for data in departments %}
+                <option value="">{{ data.department }}</option>
+                {% endfor %}
             </select>
             <br>
             <label for="">Select Doctor :</label>
-            <select name="selectDoctor" id="" >
-                <option value="">Select Doctor</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
+            <select name="doctorName" id="" >
+                {% for data in doctors %}
+                <option value="">{{ data.doctorName }}</option>
+                {% endfor %}
 
             </select>
-
+            
+            <p style="color: red;">{{ message }}</p>
+        
 
             <div style="margin-top: 45px;">
                 <a href="/home/booking_date/"><input type="submit" value="NEXT"></a>

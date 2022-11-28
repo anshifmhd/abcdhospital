@@ -35,7 +35,11 @@
     <input type="text" placeholder="enter password" Name="n">
     <br><br><br>
     <label for="">department:</label>
-    <input type="text" placeholder="enter password" name="dep">
+    <select name="department" id="">
+        {% for data in departments %}
+        <option value="department">{{ data.department }}</option>
+        {% endfor %}
+    </select>
     <br><br><br>
     <label for="">Description :</label>
     <input type="text" placeholder="enter password" name="des">

@@ -26,15 +26,16 @@ def add_doctors(request):
         usname = request.POST['uname']
         pasword = request.POST['pass']
         name1 = request.POST['n']
-        dep1 = request.POST['dep']
+        department_id = request.POST['department']
+        department = Department.objects.get( id = department_id)
         desc1 = request.POST['des']
         qual = request.POST['qual']
 
-        add_d = Add_doc(name = name1, deprmt = dep1, desc = desc1, quali = qual )
+        add_d = Add_doc(name = name1, department = department, desc = desc1, quali = qual )
         account = Account( userName = usname, password = pasword, type = "doctor", user = id)
         add_d.save()
         account.save()
-    return render(request,'add_doctors.html')
+    return render(request,'add_doctors.html', {'departments' : Department.objects.all() })
 
 
 def viewRegister(request):

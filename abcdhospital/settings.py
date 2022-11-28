@@ -85,30 +85,30 @@ WSGI_APPLICATION = 'abcdhospital.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'd6osukfaf43396',
-#         'USER': 'gmmbsgsqauwdxu',
-#         'PASSWORD': 'efa9a2d3b30a5a115dd3913d9fb0dbc520260e1e5b7f65a76751b92422dcbd85',
-#         'HOST': 'ec2-44-205-177-160.compute-1.amazonaws.com',
-#         'PORT': '5432'
-
-#     }
-# }
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'abcdhospital',
-        'USER': 'postgres',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
+        'NAME': 'd6osukfaf43396',
+        'USER': 'gmmbsgsqauwdxu',
+        'PASSWORD': 'efa9a2d3b30a5a115dd3913d9fb0dbc520260e1e5b7f65a76751b92422dcbd85',
+        'HOST': 'ec2-44-205-177-160.compute-1.amazonaws.com',
         'PORT': '5432'
 
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'abcdhospital',
+#         'USER': 'postgres',
+#         'PASSWORD': 'password',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
+
+#     }
+# }
 
 
 # Password validation
@@ -148,7 +148,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, 'index/static/'),
-#    os.path.join(BASE_DIR, 'work/static/'),
+   os.path.join(BASE_DIR, 'admin/static/'),
 ]
 
 

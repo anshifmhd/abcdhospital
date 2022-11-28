@@ -13,7 +13,7 @@ class add_admin(models.Model):
 
 
 class Add_doc(models.Model):
-    name = models.CharField(max_length = 100)
+    doctorName = models.CharField(max_length = 100)
     deprmt = models.CharField(max_length = 100)
     desc = models.CharField(max_length = 1000)
     quali = models.CharField(max_length = 100)
