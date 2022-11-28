@@ -1,19 +1,20 @@
+
+
 {% extends 'index.html' %}
 {% load static %}
 {% block content %}
-    <style>
-        img{
-            width: 500px;
-            height: 300px;
-        }
-    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <div class="container">
-        
-        <h2>RADIO DIAGNOSIS AND IMAGING</h2>
-        <img  src="{% static 'images/slide4.jpg' %}" alt="">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eum necessitatibus et, animi iure sint! Nisi, numquam quod. Quod, natus. Accusantium reprehenderit velit est aliquid enim sunt esse quaerat fugit.</p>
-
+<div class="container">
+    <div id="head_style">RADIO DIAGNOSIS AND IMAGING</div>
+    <div class="row">
+        <div class="col-lg-6">
+            <img id="img" src="{% static 'images/slide4.jpg' %}" alt="">
+        </div>
     </div>
-    
+    <div id="example">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eum necessitatibus et, animi iure sint!
+        Nisi, numquam quod. Quod, natus. Accusantium reprehenderit velit est aliquid enim sunt esse quaerat
+        fugit.</div>
+</div>
+
 {% endblock %}

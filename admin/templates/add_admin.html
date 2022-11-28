@@ -10,10 +10,10 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-12">
-                <form action="" method = "POST">
+                <form action="{% url 'add_admin' %}" method = "POST">
                     {% csrf_token %}
-                    <input type="text" placeholder="admin username" name="username">
-                    <input type="password" placeholder="admin password" name="password">
+                    <input type="text" placeholder="admin username" name="username" required, unique >
+                    <input type="password" placeholder="admin password" name="password" required>
                     <input type="submit" value="add">
                 </form>
             </div>

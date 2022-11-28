@@ -1,30 +1,19 @@
-{% load static%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        p{
-            font-size: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        img{
-            width: 30%;
-            height: 250px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        
-        <h1 align="center">Cardio Thoracic & Vascular Surgery</h1>
-        <img  src="{% static 'images/scenery.jpg' %}" alt="">
-        <p>The department of Cardiothoracic and Vascular Surgery at abcdhospital     provides surgical solutions to conditions related to heart, lung, and blood vessels. Comprehensive Cardiothoracic & Vascular (CTVS) Surgery is offered at BMH Heart Centre that involves the treatment of diseases affecting organs inside the chest (heart, lungs & major blood vessels). The centre aims at giving excellent surgical care while minimizing the pain, cost and inconvenience for the patients thereby completely restoring their health and well‐being. A wide range of complex heart problems are managed with advanced surgical care, with the help of full‐fledged cardiac OT suites equipped with latest technologies. Giving importance to patient’s comfort, the operation theatres and other facilities are arranged in a patient‐friendly manner. The advanced CTVS ICU is well‐equipped to offer 24‐hour pre and post‐operative care for critically ill patients. The panel of doctors at the surgery department consists of well‐qualified experienced surgeons to assure perfect care during and after the surgical treatments. IABP (Intra‐Aortic Balloon Pump) and ECMO (Extracorporeal Membrane Oxygenation) are used to support the lives of critically ill patients with respiratory and/or heart failures. The procedure requires skilled professionals and the assistance of latest technologies, which BMH assures to the patients. </p>
+<div class="container">
+    <div id="head_style">CARDI0 THORACIC & VASCULAR SURGERY</div>
+    <div class="row">
+        <div class="col-lg-6">
+            <img id="img" src="{% static 'images/slide4.jpg' %}" alt="">
+        </div>
     </div>
-    
-</body>
-</html>
+    <div id="example">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eum necessitatibus et, animi iure
+        sint!
+        Nisi, numquam quod. Quod, natus. Accusantium reprehenderit velit est aliquid enim sunt esse quaerat
+        fugit.</div>
+</div>
+
+{% endblock %}

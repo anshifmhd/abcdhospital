@@ -1,0 +1,33 @@
+{% extends "index_admin.html" %}
+{% load static %}
+{% block content %}
+<style>
+    tr, TD{
+        color: black;
+    }
+</style>
+<div class="table ">
+<table class="center" border = "2px solid ">
+    <tr>
+        <th>NAME</th>
+        <th>PASSWORD</th>
+        <th>TYPE</th>
+        <th>USER ID</th>
+        
+    </tr>
+    {% for data in accounts %}
+    <tr>
+        <td> {{ data.userName }}</td>
+        <td> {{ data.password }}</td>
+        <td> {{ data.type }}</td>
+        <td> {{ data.user }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+
+
+
+
+{% endblock %}

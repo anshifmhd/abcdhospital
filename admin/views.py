@@ -64,3 +64,9 @@ def add_manager(request):
         managerObj = Add_manager(name = name, description = description)
         account = Account(username = username, password = password, type = "manager", user = id)
     return render(request, "add_manager.html")
+
+
+
+def view_account(request):
+    obj = Account.objects.all()
+    return render(request, 'view_account.html',{'accounts': obj })

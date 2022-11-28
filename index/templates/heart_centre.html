@@ -1,33 +1,19 @@
+
 {% extends 'index.html' %}
 {% load static %}
 {% block content %}
-    <style>
-        img{
-            width: 30%;
-            height: 250px;
-        }
-    </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <div class="container">
-        
-        <h1 align="center">HEART CENTRE</h1>
-        <hr>
-        <img  src="{% static 'images/slide4.jpg' %}" alt="">
-        <p>Our cardiac care department is well equipped with latest technology and skilled personnel, making us one of the most sought after hospitals in the region.
-
-            With its novel and integrative strategies in preventive and therapeutic cardiovascular care, the heart centre at abcdhospital offers world‐class diagnostic and treatment facilities for all cardiac ailments among adults and children. When
-            a patient with chest pain is brought to the hospital, the entire team moves fast and ensures that the patient receives percutaneous coronary intervention (PCI) as early as possible, saving the most critical time. The centre
-            boasts of top‐quality services and facilities with the least door‐to‐balloon time and door‐to‐needle time in the region. The centre provides a comprehensive range of medical as well as surgical treatments with the assistance
-            of latest technologies. The Cardiologists and Cardio Thoracic Surgeons at the centre are trained from renowned institutes, having salient experience in the respective areas.
-            
-            Patients are always at the heart of treatment at BMH and our well‐trained cardiologists collaborate with experts from various specialties to provide the most accurate and personalised treatment.
-            
-            The Heart Centre is equipped with ultra‐modern technologies such as 500 slice equivalent multi detector Cardiac CT, 1.5 TESLA High Definition MRI and 3D & 4D Echocardiography that ensures fast and accurate diagnosis. The 20 bedded
-            ICUs are well‐equipped to offer dedicated care to the cardiac patients. From diagnosis to cure, BMH offers state‐of‐the‐art facilities to ensure world‐class healthcare services. Being committed to care, we work collaboratively
-            to provide quality services for the prevention and treatment of cardiac ailments.Two Digital flat panel Cath lab with Gen 3 – Greenfield Technology, IVUS facility, electrophysiology lab, ultra‐ modern cardiac operation theatres
-            and much more along with the guidance of experienced Cardiologists & Cardio Thoracic Surgeons makes us one of the top-rated cardiac centres in the region.
-            </p>
-
+<div class="container">
+    <div id="head_style">HEART CENTRE</div>
+    <div class="row">
+        <div class="col-lg-6">
+            <img id="img" src="{% static 'images/slide4.jpg' %}" alt="">
+        </div>
     </div>
-    
+    <div id="example">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eum necessitatibus et, animi iure sint!
+        Nisi, numquam quod. Quod, natus. Accusantium reprehenderit velit est aliquid enim sunt esse quaerat
+        fugit.</div>
+</div>
+
 {% endblock %}

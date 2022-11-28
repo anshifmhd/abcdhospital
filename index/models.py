@@ -5,7 +5,7 @@ from admin.models import Add_doc, Department
 
 class Account(models.Model):
     
-    userName = models.CharField(max_length = 100)
+    userName = models.CharField(max_length = 100, unique=True)
     password = models.CharField(max_length = 100)
     type = models.CharField(max_length =100)
     user = models.CharField(max_length = 100)
