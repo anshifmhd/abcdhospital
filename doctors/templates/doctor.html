@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<div class="container">
+
+
+  hiiiiiiiiiiiiiii
+  {% for data in doctors %}
+  <h1>{{data.doctorName}}</h1>
+  <h1>{{data.quali}}</h1>
+  <h1>{{data.desc}}</h1>
+  {% endfor %}
+</div>
+  
+
+
+
+
+
+
+{% endblock %}

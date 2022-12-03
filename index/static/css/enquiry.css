@@ -1,19 +1,18 @@
-.container .enquiry {
-    /* background-color: red; */
-    padding: 50px;
+span{
+    font-family: "Audiowide", sans-serif;
 }
 
-.enquiry #name, #ph {
-    
+.body{
+    background-color: rgb(23, 78, 92);
+    border-radius: 10px;
+    padding: 10px;
 }
 
-.enquiry input {
-    height: 50px;
-    
-}
 
-.enquiry select {
-    height: 50px;
-    width: 170px;
+input[type=email]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
 }
-

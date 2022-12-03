@@ -13,6 +13,10 @@ urlpatterns=[
     path('booking_date',views.booking_date, name = "booking_date"),
     path('about',views.about, name = "about"),
     path('cardiology',views.cardiology, name = "cardiology"),
+    path('enquiry',views.enquiry, name = "enquiry"),
+
+
+
 
     path('anaesthesiology',views.anaesthesiology, name = "anaesthesiology"),
     path('BloodBank',views.BloodBank, name = "BloodBank"),

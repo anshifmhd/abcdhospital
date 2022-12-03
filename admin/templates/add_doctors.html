@@ -2,56 +2,78 @@
 {% load static %}
 {% block content %}
 
-<style>
-    
-    .container .form {
-        width: 50%;
-        margin: auto;
-        /* padding-top: 50px; */
-        
-    }
-    input{
-        width: 300px;
-        height: 50px;
-        /* align: center;/ */
-        color: black;
-    }
-</style>
 
+<div class="row" id="register">
+    <div class="col-lg-3 col-sm-12"></div>
+    <div class="col-lg-6 col-sm-12">
+        <div id="head_style">Add doctor</div>
+        <div id="register_form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-25">
+                        <label for="">Username :</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="enter username/Email" name="uname">
+                    </div>
+                </div>
 
-<form action="" method="POST">
-    {% csrf_token %}
-    
-<div class="container" align="center">
-    
-    <div class="form">
-        <label for="">Username :</label>
-    <input type="text" placeholder="enter username/Email" name="uname">
-    <br><br>
-    <label for="">Password :</label>
-    <input type="password" placeholder="enter password" name="pass">
-    <br><br><br>
-    <label for="">Full Name:</label>
-    <input type="text" placeholder="enter password" Name="n">
-    <br><br><br>
-    <label for="">department:</label>
-    <select name="department" id="">
-        {% for data in departments %}
-        <option value="department">{{ data.department }}</option>
-        {% endfor %}
-    </select>
-    <br><br><br>
-    <label for="">Description :</label>
-    <input type="text" placeholder="enter password" name="des">
-    <br><br><br>
-    <label for="">Qualification:</label>
-    <input type="text" placeholder="enter password" name="qual">
-    
-    <br><br><br>
-    <input type="submit" value="ADD" class="form-control " style="width: 100px; margin: auto;" >
+                <div class="row">
+                    <div class="col-25">
+                        <label for="">Password :</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="password" placeholder="enter password" name="pass">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="">Full Name:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="enter full name" name="doctorName">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="">department:</label>
+                    </div>
+                    <div class="col-75">
+                        <select name="department" style="color: black;">
+                            {% for data in departments %}
+                            <option value="{{data.id}}" style="color: black;">{{ data.department }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="">Description:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="enter password" name="des">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="">Qualification:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="enter password" name="qual">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <input id="submit" type="submit" value="ADD">
+                </div>
+            </form>
+        </div>
+
     </div>
+    <div class="col-lg-3 col-sm-12"></div>
+
 </div>
-</form>
 
 
 {% endblock %}

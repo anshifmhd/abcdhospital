@@ -7,6 +7,9 @@ from admin.models import Department, Add_doc
 # from . models import *
 
 
+
+
+
 # Create your views here.
 
 
@@ -34,9 +37,9 @@ def register(request):
         password = request.POST['password']
         
 
-        reg = Register(name = name, email = email, address = address, phone = phone, dob = dob)
+        reg1 = Register(name = name, email = email, address = address, phone = phone, dob = dob)
         account = Account(userName = userName, password = password, type = "user", user = id)
-        reg.save()
+        reg1.save()
         account.save()
 
 
@@ -46,8 +49,8 @@ def register(request):
         
 def login(request):
     if request.method == 'POST':
-        usern = request.POST['usernam']
-        passw = request.POST['pass']
+        usern = request.POST['username']
+        passw = request.POST['password']
         try:
             user = Account.objects.get(userName = usern, password = passw)
             request.session['userid'] = user.id
@@ -55,7 +58,7 @@ def login(request):
                 print('hi')
                 return redirect('index_doctors')
             elif (user.type == "user"):
-                return redirect ('index_cust')
+                return redirect ('index')
             elif (user.type == "admin"):
                 return redirect('index_admin')
             else :
@@ -67,12 +70,12 @@ def login(request):
 @login_required
 def logout(request):
     del request.session['userid']
-    return redirect('log')
+    return redirect('login')
 
 
 
 
-
+@login_required
 def book_appoinment(request):
     
     if request.method == "POST":

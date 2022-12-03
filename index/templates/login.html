@@ -1,31 +1,51 @@
-
 {% extends 'index.html' %}
 {% load static %}
 {% block content %}
-	<link rel="stylesheet" href="{% static 'css/login.css' %}">
-    <div class="container-fluid">
-		<div class="login" align = "center">
-			<form method="POST" >
-				{% csrf_token %}
-				<h2>Login</h2>
-				<br><br>
-				<input type="text" style="color: black;" placeholder = "Username/ Email/ Phone Number" name="usernam"><br><br><br>
-				<input type="password" style="color: black;" placeholder = "Enter your Password" name="pass">
-				<p style="color: red;">{{message}}</p>
-			</div>
-			<div class="submit">
-				<input style="color: black;" type="submit" value="Login" ><br>
-			
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<div class="container-fluid">
+	<div class="row" id="register">
+		<div class="col-lg-4 col-sm-12"></div>
+		<div class="col-lg-4 col-sm-12">
+			<div id="register_form">
+				<form method="POST">
+					{% csrf_token %}
+					<div id="head_style">login</div>
+					<br>
+					<div class="row">
+						<input type="text" style="color: black;" placeholder="Username/ Email/ Phone Number" name="username">
+					</div><br>
+					<div class="row">
+						<input type="password" style="color: black;" placeholder="Enter your Password" name="password">
+					</div>
+					<div class="row">
+						<div class="col-25"></div>
+						<div class="col-50">
+					<small style="color: red;">{{message}}</small>
+						</div>
+						<div class="col-25"></div>
+					</div><br>
+					<a href="">
+						<div class="row">
+							<input id="submit" type="submit" value="Login">
+						</div>
+					</a>
+
+					
+
+				</form>
 				<br>
-				<a href="register"><span>Sign-Up</span></a>
+				<a href="register">
+					<div class="row">
+						<button id="log_btn">Sign-Up</button>
+					</div>
+				</a>
+			</div>
 
-		</form>
-<br>
+
+			<div class="col-lg-4 col-sm-12"></div>
 		</div>
+
 	</div>
-	<br>
+</div>
 
-	<script>
-
-	</script>
 {% endblock %}

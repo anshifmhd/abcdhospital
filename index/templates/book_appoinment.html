@@ -1,49 +1,75 @@
 {% extends 'index.html' %}
 {% load static %}
 {% block content %}
-<style>
-    select option{
-        color: black;
-    }
-</style>
-
-<div class="container" align = "center">
-    <div id="head_style" >Book Your Appoinment</div id="head_style">
-    <form action="{% url 'book_appoinment' %}">
-        <div class="booking" >
-            <label for="">Gender :</label>
-            <input type="text" placeholder="Enter Gender" name = "gender"><br>
-            <!-- <input type="radio" value="Male">
-            <input type="radio" value="Female">
-            <input type="radio" value="Other"><br> -->
-            <label for="">Age :</label>
-            <input type="text" placeholder="Enter your age" name = "age"><br>
-            <label for="">Choose a Department :</label>
-            <select name="departments" id="">
-                {% for data in departments %}
-                <option value="">{{ data.department }}</option>
-                {% endfor %}
-            </select>
-            <br>
-            <label for="">Select Doctor :</label>
-            <select name="doctorName" id="" >
-                {% for data in doctors %}
-                <option value="">{{ data.doctorName }}</option>
-                {% endfor %}
-
-            </select>
-            
-            <p style="color: red;">{{ message }}</p>
-        
-
-            <div style="margin-top: 45px;">
-                <a href="/home/booking_date/"><input type="submit" value="NEXT"></a>
-            </div>
-    </form>
 
 
 
+<div class="row" id="register">
+    <div class="col-lg-4 col-sm-12"></div>
+    <div class="col-lg-4 col-sm-12">
+        <div id="head_style">Book Your Appoinment</div>
+        <div id="register_form">
+            <form action="{% url 'book_appoinment' %}" method="POST">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="">Gender :</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="Enter Gender" name="gender"><br>
+                    </div>
+                </div>
+                <!-- <input type="radio" value="Male">
+                    <input type="radio" value="Female">
+                    <input type="radio" value="Other"><br> -->
+                <div class="row">
+                    <div class="col-25">
+                        <label for="">Age :</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" placeholder="Enter your age" name="age"><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="">Department:</label>
+                    </div>
+                    <div class="col-75">
+                        <select name="department">
+                            {% for data in departments %}
+                            <option value="">{{ data.department }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="">Select doctor:</label>
+                    </div>
+                    <div class="col-75">
+                        <select name="doctorName" id="">
+                            {% for data in doctors %}
+                            <option value="">{{ data.doctorName }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <small style="color: red;">{{ message }}</small>
+                <br>
+                    <a href="/home/booking_date/">
+                        <div class="row">
+                            <input id="submit" type="submit" value="NEXT">
+                        </div>
+                    </a>
+            </form>
+        </div>
+        <div class="col-lg-4 col-sm-12"></div>
+
+
+    </div>
 
 </div>
-</div>
+
+
+
+
 {% endblock %}

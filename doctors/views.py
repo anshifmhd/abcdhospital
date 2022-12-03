@@ -7,7 +7,7 @@ from decorators import login_required
 # Create your views here.
 
 
-# @login_required
+@login_required
 def view_doc(request):
     obj = Add_doc.objects.all()    
     return render(request,'doctors.html', {'details' : obj })
@@ -15,6 +15,12 @@ def view_doc(request):
 
 def index_doctors(request):
     return render(request, "index_doctors.html")
+
+
+
+def doctor(request):
+    obj = Add_doc.objects.all()
+    return render(request, "doctor.html", {'doctors' : obj})
 
 
 

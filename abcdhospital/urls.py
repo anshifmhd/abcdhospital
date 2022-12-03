@@ -26,6 +26,8 @@ urlpatterns = [
     path('employees',include('employees.urls')),
     path('manager/',include('manager.urls')),
     path('pharmacy/',include('pharmacy.urls')),
+    
+
 
 
 

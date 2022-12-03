@@ -8,6 +8,21 @@
 
 }
 
+
+/* for heading  */
+#head_style {
+    
+    
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: rgb(23, 78, 92);
+    border-radius: 5ch; 
+    background-color: white; 
+
+    
+}
+
 body{
     font-family: "Audiowide", sans-serif;
     background-color: rgb(69, 121, 134);

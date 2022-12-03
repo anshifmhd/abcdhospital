@@ -4,16 +4,9 @@
     box-sizing: border-box;
     font-size: small;
     color: white;
-    font-family: "Audiowide", sans-serif;
+    /* font-family: "Audiowide", sans-serif; */
 }
-body{
-    font-family: "Audiowide", sans-serif;
-    
-    
-    /* background-color: red ; */
-    /* font-family: "Trirong", serif; */
-    /* font-size: 15px; */
-}
+
 
 #head_style {
     
@@ -131,14 +124,6 @@ header{
     margin-bottom: 30px;
 }
 
-hr{
-    width: 40%;
-    border-width: 4px;
-    background-color: black;
-    margin: auto;
-    margin-bottom: 30px;
-    
-}
 
 
 .service .bi , .call .bi{

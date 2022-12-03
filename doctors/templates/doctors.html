@@ -1,47 +1,89 @@
-
 {% extends 'index.html' %}
 {% load static %}
 {% block content %}
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+  integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <div class="container">
-      <br>
-      <h1 align="center" style="font-weight: 1000;"> OUR DOCTORS </h1>
-      <hr>
-      <br>
-      <!-- <div class="cardiology">
-        <h1 align="left" style="font-weight: 700;">CARDIOLOGY DEPARTMENT </h1>
-      
-        
-      </div> -->
 
-      
-      <div class="row">
-        {% for data in details %}
-        <div class="col-lg-3">
+
+  <script>
+    $(document).ready(function(){
+      $('#click').click(function(){
+        $('#page').hide();
+      })
+    })
+  </script>
+
+
+<div class="container">
+  <br>
+  <h1 align="center" style="font-weight: 1000;"> OUR DOCTORS </h1>
+  <hr>
+  <br>
+
+  <div class="row">
+    {% for data in details %}
+    <div class="col-lg-3">
+      <div class="card">
+        <div class="card-head">
+          <h5 class="font-weight-bold ">{{ data.doctorName }}<br><small>{{data.department}}</small></h5>
+          <br>
+          <h6 class="font-weight-bold">qualification :{{data.quali}}</h6>
+          <img src="{% static 'images/blankperson.jpg' %}" class="img-fluid" alt="">
+          {{data.desc}}
+          <p class="pt-3"></p>
+          <!-- Button trigger modal -->
+          <!-- <a href="{% url 'doctor' %}"> -->
+          <button id="click" type="button" class="btn btn-primary" data-toggle="modal"
+            data-target="#exampleModalCenter">
+            Read More
+          </button>
+
+
           
-            
-            <div class="card">
-              <div class="card-head">
-                <h5 class="font-weight-bold ">{{ data.name }}<br><small>{{data.deprmt}}</small></h5>
-                <br>
-                <h6 class="font-weight-bold">qualification :{{data.quali}}</h6>
-                <img src="{% static 'images/blankperson.jpg' %}" class="img-fluid" alt="">
-                
-                <p class="pt-3">{{data.desc}}</p>
-                <a href="#"><button style="background-color: rgb(18, 117, 142); color: white;" type="button" class="btn btn-outline-secondary btn-md">Read More</button></a><br><br>
-              </div>
-            </div>
-            
-          
+
         </div>
-        {% endfor %}
       </div>
 
+      <div class="container" id="page">
+
+
+        
+        <h1>{{data.doctorName}}</h1>
+        <h1>{{data.quali}}</h1>
+        <h1>{{data.desc}}</h1>
+        
+      </div>
+
+
+
     </div>
+
+
+    
+    {% endfor %}
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"></script>
+
+
+
+
+</div>
+
 {% endblock %}
