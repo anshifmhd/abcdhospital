@@ -15,7 +15,7 @@
   <title>Hello, world!</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <!-- <link rel="stylesheet" href="{% static 'css/login.css' %}"> -->
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
 
 
 
@@ -36,14 +36,20 @@
               <a class="btn text-white font-weight-bold  mt-3" href="{% url 'index' %}">Home </a>
             </li>
             <li class="nav-item active font-weight-bold">
-                <a class="btn text-white font-weight-bold  mt-3" href="">Add booking time</a>
+              <a class="btn text-white font-weight-bold  mt-3" href="{% url 'doctors:consultation_report' %}">Consultation report</a>
+            </li>
+            <li class="nav-item active font-weight-bold">
+              <a class="btn text-white font-weight-bold  mt-3" href="{% url 'doctors:view_bookings' %}">View bookings</a>
+            </li>
+            <li class="nav-item active font-weight-bold">
+                <a class="btn text-white font-weight-bold  mt-3" href="{% url 'doctors:add_bookingTime' %}">Add booking time</a>
               </li>
             <li>
             <li class="nav-item active font-weight-bold">
-              <a class="btn text-white font-weight-bold  mt-3" href="{% url 'viewDoctor' %}">View Doctors</a>
+              <a class="btn text-white font-weight-bold  mt-3" href="{% url 'doctors:view_doctors' %}">View Doctors</a>
             </li>
             <li class="nav-item active font-weight-bold">
-                <a class="btn text-white font-weight-bold  mt-3" href="">View your profile</a>
+                <a class="btn text-white font-weight-bold  mt-3" href="{% url 'doctors:view_profile' %}">View your profile</a>
               </li>
             <li class="nav-item active font-weight-bold">
               <a class="btn text-white font-weight-bold  mt-3" href="{% url 'logOut' %}">Log Out</a>
@@ -59,7 +65,7 @@
 
 
 
-  <div class="container" style="width: 75%; height: 400px; margin: auto; margin-top: 50px ; margin-bottom: 50px;">
+  <div class="body" style="width: 75%; height: 400px; margin: auto; margin-top: 50px ; margin-bottom: 50px;">
     {% block content %}
     <section class="about">
       <div class="container py-5">

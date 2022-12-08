@@ -38,8 +38,9 @@ def register(request):
         
 
         reg1 = Register(name = name, email = email, address = address, phone = phone, dob = dob)
-        account = Account(userName = userName, password = password, type = "user", user = id)
         reg1.save()
+        account = Account(userName = userName, password = password, type = "user", user_id = reg1.id)
+       
         account.save()
 
 
@@ -56,7 +57,7 @@ def login(request):
             request.session['userid'] = user.id
             if (user.type == "doctor"):
                 print('hi')
-                return redirect('index_doctors')
+                return redirect('doctors:index_doctors')
             elif (user.type == "user"):
                 return redirect ('index')
             elif (user.type == "admin"):

@@ -1,7 +1,47 @@
-{% extends 'index_customer.html' %}
+{% extends 'index.html' %}
 {% load static %}
 {% block content %}
-    <div class="container" style="margin-top: 100px; text-align: center;">
-        
+
+<style>
+    .row {
+        margin-top: 20px;
+    }
+</style>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-sm-12">
+            <div class="jumbotron bg-dark">
+
+                
+                <h1 class="display-4">Name : {{data.user.name}}</h1>
+                <p class="lead">Email : {{data.}}</p>
+                <p class="lead">Phone : {{data.phone}}</p>
+                <p class="lead">Address : {{data.address}}</p>
+                <p class="lead">Date of Birth : {{data.dob}}</p>
+
+                <hr class="my-4">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Update Profile</a>
+            </div>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <div class="jumbotron bg-dark">
+                <h1 class="display-4">Health Details</h1>
+
+
+                <hr class="my-4">
+                <a class="btn btn-primary btn-lg" href="{% url 'customers:health_details' %}" role="button">Click to know</a>
+            </div>
+            <div class="jumbotron bg-dark">
+                <h1 class="display-4">Pharmacy Details</h1>
+
+
+                <hr class="my-4">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Click to know</a>
+            </div>
+        </div>
+
     </div>
+</div>
 {% endblock %}

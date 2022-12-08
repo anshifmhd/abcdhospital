@@ -20,6 +20,12 @@ class Add_doc(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE, null=True)
     desc = models.CharField(max_length = 1000)
     quali = models.CharField(max_length = 100)
+    image = models.ImageField(upload_to='doctors/', null=True)
+
+
+    # @property
+    # def department(self):
+    #     return self.department.department
 
     
 

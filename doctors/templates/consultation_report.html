@@ -1,0 +1,39 @@
+{% extends 'index_doctors.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<div class="container">
+    <div class="row ">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="jumbotron bg-dark">
+                <h1 class="display-5">Consultation Reports</h1>
+                <hr class="my-4">
+                <a class="btn btn-primary btn-lg" href="{% url 'customers:health_details' %}" role="button">Click to know</a>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 ">
+            <div class="jumbotron bg-dark">
+                <h1 class="display-5">Send Cunsultation Report to Patients</h1>
+                <hr class="my-4">
+                <a class="btn btn-primary btn-lg" href="{% url 'doctors:send_consultation_report' %}" role="button">Click to know</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

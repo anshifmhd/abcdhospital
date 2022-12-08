@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="{% static 'css/index_admin.css' %}">
   <link rel="stylesheet" href="{% static 'css/register.css' %}">
 
-  
+
 
 
 
@@ -26,32 +26,34 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-md navbar-dark sticky-top">
-      
-        <a class="navbar-brand font-weight-bold " href="#">ABCD <br> HOSPITAL</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto ">
-            <li class="nav-item active font-weight-bold">
-              <a class="btn text-white font-weight-bold  mt-3" href="{% url 'index' %}">Website </a>
-            </li>
-            <li class="nav-item active font-weight-bold">
-              <a class="btn text-white font-weight-bold  mt-3" href="/admin/add_doctors/">Add Doctors</a>
-            </li>
-            <li class="nav-item active font-weight-bold">
-              <a class="btn text-white font-weight-bold  mt-3" href="{% url 'viewRegister' %}">View Registers</a>
-            </li>
-            <li class="nav-item active font-weight-bold">
-              <a class="btn text-white font-weight-bold  mt-3" href="{% url 'add_department' %}">Add Department</a>
-            </li>
-            <li class="nav-item active font-weight-bold">
-              <a class="btn text-white font-weight-bold  mt-3" href="{% url 'view_account' %}">View Accounts</a>
-            </li>
+      <a class="navbar-brand font-weight-bold " href="#">ABCD <br> HOSPITAL</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        </div>
-      
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto ">
+          <li class="nav-item active font-weight-bold">
+            <a class="btn text-white font-weight-bold  mt-3" href="{% url 'index' %}">Website </a>
+          </li>
+          <li class="nav-item active font-weight-bold">
+            <a class="btn text-white font-weight-bold  mt-3" href="{% url 'add_doctors' %}">Add Doctors</a>
+          </li>
+          <li class="nav-item active font-weight-bold">
+            <a class="btn text-white font-weight-bold  mt-3" href="{% url 'viewRegister' %}">View Registers</a>
+          </li>
+          <li class="nav-item active font-weight-bold">
+            <a class="btn text-white font-weight-bold  mt-3" href="{% url 'add_department' %}">Add Department</a>
+          </li>
+          <li class="nav-item active font-weight-bold">
+            <a class="btn text-white font-weight-bold  mt-3" href="{% url 'view_account' %}">View Accounts</a>
+          </li>
+          <li class="nav-item active font-weight-bold">
+            <a class="btn text-white font-weight-bold  mt-3" href="{% url 'logOut' %}">Log Out</a>
+          </li>
+      </div>
+
     </nav>
   </header>
 
@@ -59,7 +61,7 @@
 
 
   <div class="container">
-    
+
     {% block content %}
 
     <h1>admin page</h1>

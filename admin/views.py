@@ -8,6 +8,14 @@ from index.models import Register, Account
 def index_admin(request):
     return render(request, 'index_admin.html')
 
+def add_department(request):
+    if request.method == "POST":
+        department = request.POST['department']
+        obj = Department(department=department)
+        obj.save()
+    return render(request, 'add_department.html')
+
+
 
 def add_admin(request):
     if request.method == "POST":
@@ -21,6 +29,7 @@ def add_admin(request):
 
 
 def add_doctors(request):
+    # obj = ""
     if request.method == "POST":
         usname = request.POST.get("uname")
         pasword = request.POST.get("pass")
@@ -29,9 +38,12 @@ def add_doctors(request):
         department = Department.objects.get( id=department_id)
         desc1 = request.POST['des']
         qual = request.POST['qual']
+        image = request.FILES['image']
 
-        Add_doc.objects.create(doctorName=doctorName , department = department, desc=desc1, quali=qual)
-        Account.objects.create(userName=usname, password=pasword, type="doctor")
+        obj = Add_doc(doctorName=doctorName , department=department, desc=desc1, quali=qual, image=image)
+        obj.save()
+        account = Account.objects.create(userName=usname, password=pasword, type="doctor")
+        account.save()
     return render(request, 'add_doctors.html', {'departments': Department.objects.all()})
 
 
@@ -40,12 +52,6 @@ def viewRegister(request):
     return render(request, "view_register.html", {'users': obj})
 
 
-def add_department(request):
-    if request.method == "POST":
-        department = request.POST['department']
-        obj = Department(department=department)
-        obj.save()
-    return render(request, 'add_department.html')
 
 
 def add_manager(request):

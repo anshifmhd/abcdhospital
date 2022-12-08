@@ -3,19 +3,88 @@
 {% block content %}
 
 
-
-
-<div class="container">
-
-
-  hiiiiiiiiiiiiiii
-  {% for data in doctors %}
-  <h1>{{data.doctorName}}</h1>
-  <h1>{{data.quali}}</h1>
-  <h1>{{data.desc}}</h1>
-  {% endfor %}
-</div>
+<style>
   
+  div #profile {
+    /* padding: 50px; */
+    /* height: 400px; */
+    background-color: rgb(1, 41, 52);
+    padding-bottom: 50px;
+    padding-top: 50px;
+  }
+
+
+  img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+  }
+
+
+
+  #text {
+    padding-top: 50px;
+    padding-left: 50px;
+  }
+
+  #text h1,
+  h3 {
+    font-weight: bold;
+
+  }
+
+  h3,
+  h4 {
+    display: inline;
+  }
+</style>
+
+
+<div class="body">
+  <div class="row" id="profile">
+    <div class="col-lg-4 col-md-6 col-sm-12" id="image" align="right">
+      <img src="{{ doctors.image.url }}" alt="">
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div id="text">
+        <h1>{{doctors.doctorName}}</h1>
+        <h3>Department: </h3>
+        <h4>{{doctors.department.department}}</h4><br>
+        <h3>ABCD HOSPITAL</h3><br><br>
+
+        <a href="{% url 'book_appoinment' %}"><button style="background-color: rgb(18, 117, 142); color: white;"
+            type="button" class="btn btn-outline-secondary btn-lg">Book an Appoinment</button></a>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12"></div><br><br><br>
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <div id="head_style">About</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <h5>{{doctors.desc}}</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <div id="head_style">Qualification</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <h5>{{doctors.quali}}</h5>
+        <br><br><br>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 
 
