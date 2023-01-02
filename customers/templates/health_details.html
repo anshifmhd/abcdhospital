@@ -8,7 +8,7 @@
         padding-top: 10px;
     }
 
-    p,
+    p,b, #hi
     input,
     button {
         color: black;
@@ -17,52 +17,68 @@
     .body {
         margin-top: 20px;
     }
+
+    #submit{
+        margin-top: 100px;
+        margin-right: 20px;
+    }
 </style>
 
 
 <div class="header">
     <div class="row bg-dark">
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-5 col-md-5 col-sm-12">
             <h5><b> NAME : </h5></b>
             <h6>EMAIL : </h6>
             <h6>PHONE NUMBER : </h6>
             <h6>ADDRESS : </h6>
             <h6>PIN CODE : </h6>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="col-lg-5 col-md-5 col-sm-12">
             <h6>DATE OF BIRTH : </h6>
             <h6>BLOOD GROUP : </h6>
             <h6>SEX : </h6>
             <h6>MERITAL STATUS : </h6>
             <h6>PARENT NAME</h6>
             <h6>PARENT PHONE NUMBER</h6>
-            <!-- <button>Edit</button> -->
+            
         </div>
+        <div class="col-lg-2 col-md-2 col-sm-12"><input type="submit" id="submit" value="Edit"></div>
     </div>
 </div>
 <div class="container">
     <div class="body">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
+                {% for data in reports %}
                 <div class="jumbotron bg-white text-dark">
                     <div class="row">
-                        <div class="col-lg-6 col-sm-6">
-                            <p>Doctor Name: </p>
-                            <p>Department: </p>
+                        <div class="col-lg-6 col-sm-6" id="hi">
+                            <p>Doctor Name: <b>{{data.bookingtable.doctor.doctorName}}</b>  </p>
+                            <p>Department: <b>{{data.bookingtable.department.department}}</b></p>
                         </div>
-                        <div class="col-lg-6 col-sm-6">
-                            <p>Date: </p>
-                            <p>Time: </p>
+                        <div class="col-lg-6 col-sm-6" align="center">
+                            <p>Date: {{data.date}}</p>
+                            <p>Time: {{data.time}}</p>
                         </div>
                     </div>
                     <hr class="my-4">
+                    <b style="color: black;">Prescription:</b>
                     <div class="row">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat veritatis quo rerum quae
-                            pariatur porro nihil earum? Blanditiis dolor dolorem et soluta, consectetur natus laborum
-                            adipisci officiis velit numquam impedit?
-                        </p>
+                        <div class="col-25"></div>
+                        <div class="col-75"><p>{{data.report}}</p></div>
+                        
+                            
+                        
                     </div>
+                    <hr>
+                    <b style="color: black;">Medicine:</b>
+                    <div class="row">
+                        <div class="col-25"></div>
+                        <br>
+                        <div class="col-75"><p ><b style="color: black;">{{data.medicine}}</b></p></div>
+                    </div>
+
                     <hr class="my-4">
                     <div class="row">
                         <p>upload your op ticket details</p> <br>
@@ -71,10 +87,11 @@
                         <form action="">
                             <input type="file" id="myFile" name="filename"><br>
                             <input type="submit" value="upload">
-                            <button value="">View image</button>
+                            <button id="submit" value="">View image</button>
                         </form>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
 

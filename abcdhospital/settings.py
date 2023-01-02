@@ -101,7 +101,7 @@ WSGI_APPLICATION = 'abcdhospital.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'abcdhospital',
+        'NAME': 'abcdhospital1',
         'USER': 'postgres',
         'PASSWORD': 'password',
         'HOST': 'localhost',

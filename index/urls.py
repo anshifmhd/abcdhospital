@@ -1,7 +1,6 @@
 from django.urls import path
 from . import views
 
-
 urlpatterns=[
 
     path('',views.ind, name="index"),
@@ -38,6 +37,16 @@ urlpatterns=[
     path('radioDiagnosis',views.radioDiagnosis, name = "radioDiagnosis"),
     path('transfusion_medicine',views.transfusion_medicine, name = "transfusion_medicine"),
     path('womenCare',views.womenCare, name = "womenCare"),
+    path('bookingDetails',views.bookingDetails, name = "bookingDetails"),
+
+    
+
+
+# ajax
+    path('dep_doctors',views.dep_doctors, name = "dep_doctors"),
+    # path('checkTime',views.checkTime, name = "checkTime"),
+
+
 
     
 

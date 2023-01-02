@@ -1,20 +1,134 @@
 {% extends 'index.html' %}
 {% load static %}
 {% block content %}
-    <div class="container" style="margin-top: 100px; text-align: center;">
-        <h1>Booking Date</h1>
-        <hr width="50%">
-        <br><br><br>
-        <label for="">Consultation date</label>
-        <input type="date"  >
+<link rel="stylesheet" href="{% static 'css/bookingDate.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
 
-        <br><br><br><br><br><br>
-        <span>Next Available Date : </span>
-        <br>
-        <p>The doctor may be available to consult on walk-in basis before the next available 
-            booking date. Please call the call centre at 0495-2777777 to check the availability. </p>
+<div class="row" id="register">
+    <div class="col-lg-3 col-sm-12"></div>
+    <div class="col-lg-6 col-sm-12">
+        <div id="head_style">Booking Date</div>
+        <div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <br>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="">Booking Date:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="date" placeholder="select date" id="date" name="date" onchange="aaa()" required>
+                    </div>
+
+                </div><br>
+                <div id="message">
+                    <h5 class="text-danger">This day is not available for booking, You have to choose another day</h5>
+                </div>
+
+
+                <div class="time" id="time">
+                    {% for t in time %}
+                    <input type="button" name="time" value="{{t.time}}" class="btn btn-light" onclick="gettime(this)">
+                    {% endfor %}
+                    <input type="hidden" name="htime" id="htime">
+                </div>
+                <a href="">
+                    <div class="row">
+                        <input id="submit" type="submit" value="SUBMIT" onclick="myFunction()">
+                    </div>
+                </a>
+
+                <div id="snackbar">Your Booking is successfully completed</div>
+
+            </form>
+        </div>
+        <div class="col-lg-3 col-sm-12"></div>
+
+
     </div>
-    <div align="center">
-        <a href=""><input type="submit" value="BOOK NOW"></a>
-    </div>
+
+</div>
+<script>
+    function gettime(a) {
+        console.log(a)
+        document.getElementById('htime').value = a.value
+
+
+    }
+
+    message = document.getElementById('message')
+    message.style.display = 'none'
+    aaaa = document.getElementById('time')
+    aaaa.style.display = 'none'                                 //for hiding time buttons
+
+
+    function aaa() {
+        message = document.getElementById('message')
+        aaaa = document.getElementById('time')
+        dd = document.getElementById('date').value
+        var A = new Date(dd);
+
+        // Day of the week from above Date Object is
+        // being extracted using getDay()
+        var Day = A.getDay();
+        // Printing day of the week
+        console.log(Day);
+        if (A.getDay() == 0) {
+            aaaa.style.display = 'none'                                 //for hiding time buttons
+            message.style.display = 'block'
+        }
+        else if (A.getDay() == 6) {
+            aaaa.style.display = 'none'                                 //for hiding time buttons
+            message.style.display = 'block'
+
+        }
+        else {
+            message.style.display = 'none'
+            aaaa.style.display = 'block'               //for showing times
+        }
+
+    }
+
+
+
+    function myFunction() {
+        // Get the snackbar DIV
+        var x = document.getElementById("snackbar");
+
+        // Add the "show" class to DIV
+        x.className = "show";
+
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    }
+
+
+    // $(document).ready(function () {
+
+
+    //     $('#date').change(function () {
+    //         $.ajaxSetup({
+    //             headers: {
+    //                 "X-CSRFToken": $('[name=csrfmiddlewaretoken]').val()
+    //             }
+    //         })
+    //         var date1 = $('#date').val()
+    //         $.ajax({
+    //             type: "POST",
+    //             url: "  url 'checkTime' ",
+    //             data: {
+    //                 'date': date1
+    //             },
+
+    //         })
+
+    //     })
+    // })
+
+</script>
+
+
+
+
 {% endblock %}

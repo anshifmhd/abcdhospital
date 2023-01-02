@@ -12,10 +12,13 @@
 
   }
 
-  #description{
+  .description {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .jumbotron{
+    background-color: rgb(36, 35, 35);
   }
 </style>
 
@@ -35,45 +38,83 @@
   <hr>
   <br>
 
-
   <div class="body">
     <div class="row" style="color: black;">
       <div class="col-lg-3 col-md-3 col-sm-12">
         <div id="head_style">Choose Department</div>
-        <select name="department" id="">
+        <select name="department" id="department">
           {% for data in departments %}
-          <option value="{{data.department}}}">{{data.department}}</option>
+          <option value="{{data.id}}">{{data.department}}</option>
           {% endfor %}
         </select>
       </div>
 
       <div class="col-lg-7 col-md-7 col-sm-12">
-        {% for datas in details %}
-        <a href="{% url 'doctors:doctor' datas.id %}">
-          <div class="jumbotron bg-dark">
-            <div class="row">
-              <div class="col-lg-4 col-md-4 col-sm-4" align="center">
-                <img style="width: 130px; height:130px" src="{{datas.image.url}}" alt="">
+
+        <div id="data1">
+          <div id="doctorData">
+            {% for datas in details %}
+            <a href="{% url 'doctors:doctor' datas.id %}">
+              <div class="jumbotron" id="jumbotron">
+                <div class="row">
+                  <div class="col-lg-4 col-md-4 col-sm-4" align="center">
+                    <img style="width: 130px; height:130px" src="{{datas.image.url}}" alt="">
+                  </div>
+                  <div class="col-lg-8 col-md-8 col-sm-8">
+                    <h5 id="h5"><b>{{datas.doctorName}}</b></h5>
+                    <h6>{{datas.department.department}}</h6>
+                    <p>{{ datas.quali}}</p>
+                    <div class="description">{{datas.desc}}</div>
+                  </div>
+                </div>
               </div>
-              <div class="col-lg-8 col-md-8 col-sm-8">
-                <h5><b>{{datas.doctorName}}</b></h5>
-                <h6>{{datas.department.department}}</h6>
-                <p>{{ datas.quali}}</p>
-                <div id="description">{{datas.desc}}</div>
-              </div>
-            </div>
+            </a>
+            {% endfor %}
           </div>
-        </a>
-        {% endfor %}
+        </div>
       </div>
     </div>
   </div>
 
-
-
-
-
+  {% csrf_token %}
 </div>
+
+<script>
+  $(document).ready(function () {
+  
+    $('#department').change(function () {
+      $.ajaxSetup({
+        headers: {
+          "X-CSRFToken": $('[name=csrfmiddlewaretoken]').val()
+        }
+      })
+      var department = $('#department option:selected').val()
+      $.ajax({
+        type: "POST",
+        url: "{% url 'doctors:depratment_doctors' %}",
+        data: {
+          'department': department
+        },
+
+        success: function (response) {
+          datas = response.data
+          // console.log(datas)
+          $('#data1').children().remove()
+          str2 = ""
+
+          for (i in datas) {
+            console.log(i)
+            console.log(datas[i].image)
+            str2 += "<a href='doctor/"+datas[i].id+"'><div class='jumbotron'><div class='row'><div class='col-lg-4 col-md-4 col-sm-4' align='center'><img style='width: 130px; height:130px' src="+datas[i].image+"></div><div class='col-lg-8 col-md-8 col-sm-8'><h5><b>" + datas[i].doctorName + "</b></h5><h6>" + datas[i].department + "</h6><p>" + datas[i].quali + "</p><div class='description'>" + datas[i].desc + "</div></div></div></div></a>"        
+            }
+            $('#data1').append(str2)  
+          
+
+        }
+      })
+    })
+  })
+</script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

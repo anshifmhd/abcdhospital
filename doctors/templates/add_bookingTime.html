@@ -20,22 +20,14 @@
     <div class="col-lg-6 col-sm-12 ">
         <div id="head_style">Upload Booking Time</div>
         <div class="register_form" id="register_form">
-            <form action="">
+            <form action="" method="POST">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-25">
-                        <label for="date">Date : </label>
+                        <label for="date">Times : </label>
                     </div>
                     <div class="col-75">
-                        <input type="date" id="date" placeholder="select dates" name="date">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="date">time : </label>
-                    </div>
-                    <div class="col-75">
-                        <input type="time" id="date" placeholder="select times" name="time">
+                        <input type="time" id="time" placeholder="select Times" name="time">
                     </div>
                 </div>
                 <div class="row">
@@ -46,5 +38,8 @@
     </div>
     <div class="col-lg-3 col-sm-12"></div>
 </div>
+
+
+
 
 {% endblock %}

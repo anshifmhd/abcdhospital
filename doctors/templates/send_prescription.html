@@ -1,0 +1,90 @@
+{% extends 'index_doctors.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    input[type=time] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+</style>
+
+
+
+<div class="row" id="register">
+    <div class="col-lg-3 col-md-3 col-sm-12"></div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+        <div id="head_style">Send Consultaion Prescription</div>
+        <div id="register_form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-25">
+                        <label for="date">Patient name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="name" readonly value="{{datas.user_id.user.name}}" name="name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="time">phone number</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" readonly id="phone" value="{{datas.user_id.user.phone}}" name="phone">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="time"></label>
+                    </div>
+                    <div class="col-75">
+                        <input type="hidden" readonly id="idd" value="{{datas.id}}" name="idd">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="report">Prescription</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="report" placeholder="about disease" name="prescription">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="medicine">medicine</label>
+                    </div>
+                    <div class="col-75">
+                        <textarea style="color: black;" name="medicine" id="medicine" cols="30" rows="10"></textarea>
+                        <!-- <input type="text" id="medicine" placeholder="medicines for the disease" name="medicine"> -->
+
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" id="submit" value="Submit">
+                </div>
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-12"></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

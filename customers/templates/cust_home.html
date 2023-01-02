@@ -6,6 +6,10 @@
     .row {
         margin-top: 20px;
     }
+
+    label {
+        color: black;
+    }
 </style>
 
 
@@ -14,15 +18,65 @@
         <div class="col-lg-6 col-sm-12">
             <div class="jumbotron bg-dark">
 
-                
-                <h1 class="display-4">Name : {{data.user.name}}</h1>
-                <p class="lead">Email : {{data.}}</p>
-                <p class="lead">Phone : {{data.phone}}</p>
-                <p class="lead">Address : {{data.address}}</p>
-                <p class="lead">Date of Birth : {{data.dob}}</p>
+
+                <h1 class="display-4" style="font-weight: 700;">Name : {{data.user.name}}</h1>
+                <p class="lead">Email : {{data.user.email}}</p>
+                <p class="lead">Phone : {{data.user.phone}}</p>
+                <p class="lead">Address : {{data.user.address}}</p>
+                <p class="lead">Date of Birth : {{data.user.dob}}</p>
 
                 <hr class="my-4">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Update Profile</a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Edit
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-dark" id="exampleModalLabel">Update Profile</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-25"><label for="name">Name:</label></div>
+                                        <div class="col-75"><input type="text" id="name" value="{{data.user.name}}"
+                                                name="name"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-25"><label for="email">Email:</label></div>
+                                        <div class="col-75"><input type="text" id="email" value="{{data.user.email}}"
+                                                name="email"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-25"><label for="phone">Phone:</label></div>
+                                        <div class="col-75"><input type="text" id="phone" value="{{data.user.phone}}"
+                                                name="phone"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-25"><label for="address">Address:</label></div>
+                                        <div class="col-75"><input type="text" id="address"
+                                                value="{{data.user.address}}" name="address"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-25"><label for="dob">Date of Birth:</label></div>
+                                        <div class="col-75"><input type="text" id="dob" value="{{data.user.dob}}"
+                                                name="dob"></div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <a href=""><button class="btn btn-primary">Save Changes</button></a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-lg-6 col-sm-12">
@@ -31,7 +85,8 @@
 
 
                 <hr class="my-4">
-                <a class="btn btn-primary btn-lg" href="{% url 'customers:health_details' %}" role="button">Click to know</a>
+                <a class="btn btn-primary btn-lg" href="{% url 'customers:health_details' %}" role="button">Click to
+                    know</a>
             </div>
             <div class="jumbotron bg-dark">
                 <h1 class="display-4">Pharmacy Details</h1>

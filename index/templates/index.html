@@ -21,8 +21,8 @@
   <link rel="stylesheet" href="{% static 'css/register.css' %}">
   <!-- <script type="text/javascript" src="{% static 'js/hide.js' %}"></script> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-   
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 
 <body style="background-color: rgb(69, 92, 98);">
@@ -253,15 +253,15 @@
       <h2 style="color: rgb(23, 78, 92); border-radius: 5ch; background-color: white; width: 50%; ">Our Doctors</h2><br>
       <!-- <hr > -->
       <br>
-      <div class="row">
+      <div class="row ">
+        {% for d in doctors %}
         <div class="col-lg-3 ">
           <div class="card">
             <div class="card-head">
               <a href="">
-                <p class="font-weight-bold ">ROSHAN <br><small>place</small></p>
-                <img src="{% static 'images/blankperson.jpg' %}" class="img-fluid" alt="">
-                <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus incidunt expedita
-                  minima iste, sapiente dolores!</p>
+                <p class="font-weight-bold ">{{d.doctorName}} <br><small>{{d.department.department}}</small></p>
+                <img src="{{d.image.url}}" class="img-fluid" alt="">
+                <p class="pt-3">{{d.quali}}</p><br><p class="description">{{d.desc}}</p>
                 <a href="#"><button style="background-color: rgb(18, 117, 142); color: white;" type="button"
                     class="btn btn-outline-secondary btn-md">Read More</button></a><br><br>
                 <a href="#"><span class="btn btn-outline-secondary"><i class="bi bi-facebook"></i></span></a>
@@ -273,61 +273,8 @@
           </div>
           </a>
         </div>
-        <div class="col-lg-3">
-          <div class="card">
-            <div class="card-head">
-              <a href="">
-                <p class="font-weight-bold ">ROSHAN <br><small>place</small></p>
-                <img src="{% static 'images/blankperson.jpg' %}" class="img-fluid" alt="">
-                <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus incidunt expedita
-                  minima iste, sapiente dolores!</p>
-                <a href="#"><button style="background-color: rgb(18, 117, 142); color: white;" type="button"
-                    class="btn btn-outline-secondary btn-md">Read More</button></a><br><br>
-                <span class="btn btn-outline-secondary"><i class="bi bi-facebook"></i></span>
-                <span class="btn btn-outline-secondary"><i class="bi bi-instagram"></i></span>
-                <span class="btn btn-outline-secondary"><i class="bi bi-twitter"></i></span>
-                <br><br>
-            </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="card">
-            <div class="card-head">
-              <a href="">
-                <p class="font-weight-bold ">ROSHAN <br><small>place</small></p>
-                <img src="{% static 'images/blankperson.jpg' %}" class="img-fluid" alt="">
-                <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus incidunt expedita
-                  minima iste, sapiente dolores!</p>
-                <a href="#"><button style="background-color: rgb(18, 117, 142); color: white;" type="button"
-                    class="btn btn-outline-secondary btn-md">Read More</button><br></a><br>
-                <span class="btn btn-outline-secondary"><i class="bi bi-facebook"></i></span>
-                <span class="btn btn-outline-secondary"><i class="bi bi-instagram"></i></span>
-                <span class="btn btn-outline-secondary"><i class="bi bi-twitter"></i></span>
-                <br><br>
-            </div>
-            </a>
-          </div>
-        </div>
-        <!-- <br><br> -->
-        <div class="col-lg-3">
-          <div class="card">
-            <div class="card-head">
-              <a href="">
-                <p class="font-weight-bold ">ROSHAN <br><small>place</small></p>
-                <img src="{% static 'images/blankperson.jpg' %}" class="img-fluid" alt="">
-                <p class="pt-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus incidunt expedita
-                  minima iste, sapiente dolores!</p>
-                <a href="#"><button style="background-color: rgb(18, 117, 142); color: white;" type="button"
-                    class="btn btn-outline-secondary btn-md">Read More</button></a><br><br>
-                <span class="btn btn-outline-secondary"><i class="bi bi-facebook"></i></span>
-                <span class="btn btn-outline-secondary"><i class="bi bi-instagram"></i></span>
-                <span class="btn btn-outline-secondary"><i class="bi bi-twitter"></i></span>
-                <br><br>
-            </div>
-            </a>
-          </div>
-        </div>
+        {% endfor %}
+
         <br><br><br><br>
         <div class="next" align="right" style="width: 100%; margin-right: 12px; "><a href="{% url 'doctors:view_doctors' %}">
             <button class="btn  mt-4 px-5 text-white" style="background-color: rgb(18, 117, 142);">read more</button></a>
@@ -366,11 +313,10 @@
             <a href="">
               <div class="card bg-dark " style="width: 280px; height: 280px;">
                 <img class="card-img img-fluid" src="{% static 'images/white.png' %}" alt="Card image">
-                <div class="card-img-overlay">
-                  <span><i class="bi bi-heart-pulse"></i></span>
-                  <h5 class="card-title">Team Of Nurses</h5>
-                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Minima quaerat laudantium temporibus aut molestias, tempore eaque, odio nobis inventore
+                <div class="card-img-overlay"><br><br>
+                  <span><i class="fa fa-ambulance" style="font-size:48px;color:red"></i></span><br><br><br>
+                  <h5 class="card-title"> All time ambulance service</h5>
+                  
                 </div>
               </div>
             </a>
@@ -380,11 +326,10 @@
             <a href="">
               <div class="card bg-dark text-white" style="width: 280px; height: 280px;">
                 <img class="card-img img-fluid" src="{% static 'images/white.png' %}" alt="Card image">
-                <div class="card-img-overlay">
-                  <span><i class="bi bi-heart-pulse"></i></span>
-                  <h5 class="card-title">Team Of Nurses</h5>
-                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Minima quaerat laudantium temporibus aut molestias, tempore eaque, odio nobis inventore
+                <div class="card-img-overlay"><br><br>
+                  <span><i class=" 	fa fa-medkit" style="font-size:48px;color:red"></i></span><br><br><br>
+                  <h5 class="card-title"> 24x7 Medical availability</h5>
+                  
                 </div>
               </div>
             </a>
@@ -394,11 +339,10 @@
             <a href="">
               <div class="card bg-dark text-white" style="width: 280px; height: 280px;">
                 <img class="card-img img-fluid" src="{% static 'images/white.png' %}" alt="Card image">
-                <div class="card-img-overlay">
-                  <span><i class="bi bi-heart-pulse"></i></span>
-                  <h5 class="card-title">Team Of Nurses</h5>
-                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Minima quaerat laudantium temporibus aut molestias, tempore eaque, odio nobis inventore
+                <div class="card-img-overlay"><br><br>
+                  <span><i class=" 	fa fa-stethoscope" style="font-size:48px;color:red" ></i></span><br><br><br>
+                  <h5 class="card-title">24x7 Doctors Availability</h5>
+                  
                 </div>
               </div>
             </a>
@@ -408,11 +352,10 @@
             <a href="">
               <div class="card bg-dark text-white" style="width: 280px; height: 280px;">
                 <img class="card-img img-fluid" src="{% static 'images/white.png' %}" alt="Card image">
-                <div class="card-img-overlay">
-                  <span><i class="bi bi-heart-pulse"></i></span>
-                  <h5 class="card-title">Team Of Nurses</h5>
-                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Minima quaerat laudantium temporibus aut molestias, tempore eaque, odio nobis inventore
+                <div class="card-img-overlay"><br><br>
+                  <span><i class=" 	fa fa-wheelchair" style="font-size:48px;color:red"></i></span><br><br><br>
+                  <h5 class="card-title">100+ wheelchairs</h5>
+                  
                 </div>
               </div>
             </a>
@@ -422,11 +365,10 @@
             <a href="">
               <div class="card bg-dark text-white" style="width: 280px; height: 280px;">
                 <img class="card-img img-fluid" src="{% static 'images/white.png' %}" alt="Card image">
-                <div class="card-img-overlay">
-                  <span><i class="bi bi-heart-pulse"></i></span>
-                  <h5 class="card-title">Team Of Nurses</h5>
-                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Minima quaerat laudantium temporibus aut molestias, tempore eaque, odio nobis inventore
+                <div class="card-img-overlay"><br><br>
+                  <span><i class=" 	fa fa-heartbeat" style="font-size:48px;color:red" ></i></span><br><br><br>
+                  <h5 class="card-title">Cardiology</h5>
+                  
                 </div>
               </div>
             </a>
@@ -436,11 +378,10 @@
             <a href="">
               <div class="card bg-dark text-white" style="width: 280px; height: 280px;">
                 <img class="card-img img-fluid" src="{% static 'images/white.png' %}" alt="Card image">
-                <div class="card-img-overlay">
-                  <span><i class="bi bi-heart-pulse"></i></span>
-                  <h5 class="card-title">Team Of Nurses</h5>
-                  <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Minima quaerat laudantium temporibus aut molestias, tempore eaque, odio nobis inventore
+                <div class="card-img-overlay"><br><br>
+                  <span><i class='fas fa-lungs-virus' style='font-size:48px;color:red'></i></span><br><br><br>
+                  <h5 class="card-title"> Lung virus</h5>
+                  
                 </div>
               </div>
             </a>
@@ -483,7 +424,7 @@
             </div>
             <div class="card-body">
               <p class="font-weight-bold"><u><a href="#">Attitude Of Our Doctors</a></u></p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <p style="color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Perferendis nulla cum quas non debitis itaque?</p>
             </div>
 
@@ -495,8 +436,8 @@
               <img src="{% static 'images/slide1.jpg' %}" class="img-fluid" alt="">
             </div>
             <div class="card-body">
-              <p class="font-weight-bold"><u><a href="#">Attitude Of Our Doctors</a></u></p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <p class="font-weight-bold"><u><a href="#">Performance of doctors</a></u></p>
+              <p style="color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Perferendis nulla cum quas non debitis itaque?</p>
             </div>
 
@@ -508,8 +449,8 @@
               <img src="{% static 'images/slide3.jpg' %}" class="img-fluid" alt="">
             </div>
             <div class="card-body">
-              <p class="font-weight-bold"><u><a href="#">Attitude Of Our Doctors</a></u></p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <p class="font-weight-bold"><u><a href="#">medical cares of nurses</a></u></p>
+              <p style="color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Perferendis nulla cum quas non debitis itaque?</p>
             </div>
 
@@ -521,8 +462,8 @@
               <img src="{% static 'images/slide4.jpg' %}" class="img-fluid" alt="">
             </div>
             <div class="card-body">
-              <p class="font-weight-bold"><u><a href="#">Attitude Of Our Doctors</a></u></p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <p class="font-weight-bold"><u><a href="#">abcd Hospitals charitable trust</a></u></p>
+              <p style="color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Perferendis nulla cum quas non debitis itaque?</p>
             </div>
 
@@ -537,25 +478,26 @@
   <section class="call">
     <div class="container text-center py-5">
       <div class="row">
+        <a href="#">
         <div class=" calling col-lg-4 bg-dark">
           <br>
-          <a href="#">
             <span><i class="bi bi-telephone-fill"></i></span>
             <h5>Give Us A Short Call</h5>
           </a>
           <br><br><br>
         </div><br>
+        <a href="">
         <div class=" google col-lg-4">
           <br>
-          <a href="">
             <span><i class="bi bi-geo-alt-fill"></i></span>
             <h5>Search Us On Google</h5>
           </a>
           <br><br><br>
         </div><br>
+          <a href="">
+
         <div class=" mail col-lg-4 bg-dark">
           <br>
-          <a href="">
             <span><i class="bi bi-envelope-fill"></i></span>
             <h5>abcdhospital@gmail.com</h5>
           </a>
@@ -671,7 +613,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
    

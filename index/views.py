@@ -4,6 +4,8 @@ from admin.models import Add_doc
 from decorators import login_required
 from index.models import Register,Book_appoinment,Account
 from admin.models import Department, Add_doc
+from doctors.models import BookTime
+from django.http import JsonResponse
 # from . models import *
 
 
@@ -18,7 +20,13 @@ from admin.models import Department, Add_doc
 
 
 def ind(request):
-    return render(request,'index.html')
+    obj = Add_doc.objects.all()
+    doctorObj = []
+
+    for i in range(0,4):
+        doctorObj.append(obj[i])
+        
+    return render(request,'index.html',{'doctors':doctorObj})
 
 
 def heartcentre(request):
@@ -78,26 +86,58 @@ def logout(request):
 
 @login_required
 def book_appoinment(request):
-    
     if request.method == "POST":
-        gender = request.POST['gender']
-        age = request.POST['gender']
-        department_id = request.POST['department']
-        department = Department.objects.get( id = department_id)
-        doctorName_id = request.POST['doctorName']
-        doctorName = Add_doc.objects.get( id = doctorName_id)
+        request.session['gender']=request.POST['gender']
+        request.session['age']=request.POST['age']
+        request.session['d_id']=request.POST['department']
+        request.session['doc_id']=request.POST['doctorName']
 
-        obj = Book_appoinment(gender = gender, age = age, department = department, doctorName = doctorName)
-        obj.save()
-        return render(request,'book_appoinment.html', {'departments' : Department.objects.all(), 'doctors' :  Add_doc.objects.all() })
-    
+        return redirect('booking_date')    
     
     return render(request,'book_appoinment.html', {'departments' : Department.objects.all(), 'doctors' : Add_doc.objects.all() })
-        
+        # obj = Book_appoinment(gender = gender, age = age, department = department, doctor = doctorName,
+        # user_id_id = request.session['userid'])
 
     
 def booking_date(request):
-    return render(request,'booking_date.html')
+    
+    if request.method == "POST":
+        date = request.POST['date']
+        booking_time = request.POST['htime']
+        ob = Book_appoinment(booking_date = date, booking_time = booking_time, gender = request.session['gender'], age = request.session['age'], doctor_id = request.session['doc_id'], department_id = request.session['d_id'], user_id_id = request.session['userid'])
+        ob.save()
+    
+    obj = BookTime.objects.all()
+    return render(request,'booking_date.html',{'time':obj})
+
+
+
+# def checkTime(request):
+
+
+
+
+#     pass
+    # date1 = request.POST['date']
+    # bookTime = Book_appoinment.objects.values('booking_time').filter(booking_date = date1)
+    # # print(bookTime)
+    # availableTime = BookTime.objects.all()
+    # # avail_list=[ for time in availableTime if time not in bookTime]
+    
+    # # a_time=[]
+    # # for i in availableTime:
+    # #     if i not in bookTime:
+    # #         a_time.append(i)
+    # # a_time=set(availableTime).difference(set(bookTime))
+
+    # print('-------------------------')      
+    # print(bookTime)
+    # print('-------------------------')
+    # print(availableTime)
+
+    # return JsonResponse({'key':"vhgvhgf"})
+
+    # # data = [{'id':} for ]
 
 
 def about(request):
@@ -213,3 +253,20 @@ def transfusion_medicine(request):
 def womenCare(request):
     return render(request,'womenCare.html')
 
+
+
+# ajax
+
+def dep_doctors(request):
+    departmentValue = request.POST['department']
+
+    doctors = Add_doc.objects.filter(department = departmentValue)
+    print(doctors)
+    data = [{'id':i.id, 'doctorName':i.doctorName, 'department':i.department.department, 'quali':i.quali, 'desc':i.desc, 'image':i.image.url } for i in doctors]
+    return JsonResponse({'data':data})
+
+
+
+def bookingDetails(request):
+    obj = Book_appoinment.objects.all()
+    return render(request,'bookingDetails.html',{'data' : obj})

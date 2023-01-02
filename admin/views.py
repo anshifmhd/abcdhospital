@@ -42,7 +42,7 @@ def add_doctors(request):
 
         obj = Add_doc(doctorName=doctorName , department=department, desc=desc1, quali=qual, image=image)
         obj.save()
-        account = Account.objects.create(userName=usname, password=pasword, type="doctor")
+        account = Account(userName=usname, password=pasword, type="doctor", doctor_id = obj.id)
         account.save()
     return render(request, 'add_doctors.html', {'departments': Department.objects.all()})
 

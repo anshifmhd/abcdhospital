@@ -5,6 +5,8 @@ app_name='customers'
 urlpatterns=[
     path('index_customer/',views.index_customer, name = "index_customer"),
     path('cust_home/',views.cust_home, name="cust_home"),
+    path('update',views.update, name="update"),
+
     path('health_details/',views.health_details, name="health_details"),
 
 

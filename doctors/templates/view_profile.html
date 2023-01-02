@@ -3,32 +3,98 @@
 {% block content %}
 
 
-
+<style>
+  .row {
+      margin-top: 20px;
+  }
+  label{
+      color: black;
+  }
+</style>
 
 <div class="container">
   <div class="row">
-    
-  <div class="col-lg-3 col-md-3 col-sm-12"></div>
-  <div class="col-lg-6 col-md-6 col-sm-12">
-  <div id="head_style">Your Details</div>
-    <div class="row">
-    </div>
-    <div class="jumbotron bg-dark"> 
-      <h5>Profile photo :</h5> 
-      <h5>Name : </h5>
-      <h5>Department : </h5>
-      <h5>Qualification : </h5>
-      <h5>place : </h5>
-      <h5>Phone NUmber : </h5>
-      <h5>Email : </h5>
 
+    <div class="col-lg-3 col-md-3 col-sm-12"></div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div id="head_style">Your Details</div>
+      <div class="row">
+      </div>
+      <div class="jumbotron bg-dark">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <h5> <img style="width: 150px; height: 150px;" align="right" src="{{data.doctor.image.url}}" alt=""></h5>
+          <h5 style="font-weight: 700;">Name : {{data.doctor.doctorName}}</h5>
+          <h5>Department : {{data.doctor.department.department}}</h5>
+          <h5>Qualification : {{data.doctor.quali}}</h5>
+          <h5>Description :</h5><small > {{data.doctor.desc}}</small>
+          <h5>place : </h5>
+          <h5>Phone NUmber : </h5>
+          <h5>Email : </h5>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Edit
+        </button>
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title text-dark" id="exampleModalLabel">Update Profile</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                      <div class="col-25"><label for="name">Name:</label></div>
+                      <div class="col-75"><input type="text" id="name" value="{{data.doctor.doctorName  }}" name="names"></div>
+                    </div>
+                    <!-- <div class="row">
+                      <div class="col-25"><label for="email">Department:</label></div>
+                      <div class="col-75"><input type="text" id="email" value="{{data.doctor.department.department}}" name="department"></div>
+                    </div> -->
+                    <div class="row">
+                      <div class="col-25"><label for="phone">Qualification:</label></div>
+                      <div class="col-75"><input type="text" id="phone" value="{{data.doctor.quali}}" name="quali"></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25"><label for="address">Description:</label></div>
+                      <div class="col-75"><input type="text" id="description" value="{{data.doctor.desc}}" name="desc"></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25"><label for="address">Place:</label></div>
+                      <div class="col-75"><input type="text" id="address" value=""></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25"><label for="dob">Phone number</label></div>
+                      <div class="col-75"><input type="text" id="dob" value=""></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-25"><label for="dob">Email</label></div>
+                      <div class="col-75"><input type="text" id="dob" value=""></div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <a href=""><input type="submit" class="btn btn-primary" value="Save Changes"></a>
+                </div>
+        </form>
+      </div>
     </div>
   </div>
-  <div class="col-lg-3 col-md-3 col-sm-12"></div>
 
-  </div>
 </div>
-  
+</div>
+<div class="col-lg-3 col-md-3 col-sm-12"></div>
+
+</div>
+</div>
+
 
 
 
